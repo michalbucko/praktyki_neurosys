@@ -1,0 +1,41 @@
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  image: node
+  script: 
+    - echo "Start building App"
+    - npm install
+    - npm run build
+    - echo "Build successfully!"
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - build
+      - node_modules/
+  tags:
+    - docker
+
+units:
+  stage: test
+  image: node
+  script:
+    - echo "Testing App"
+    - CI=true npm test
+    - echo "Test successfully!"
+  tags:
+  - docker
+
+tslint:
+  stage: test
+  image: node
+  before_script:
+    - export PATH=$PATH:$PWD/node_modules/.bin/
+  script:
+    - echo "Linting App"
+    - npm run eslint
+    - echo "Test successfully!"
+  tags:
+    - docker
