@@ -46,11 +46,11 @@ tslint:
     PACKAGE_MANAGER: $CI_JOB_NAME
   retry: 1
   before_script:
-    - bundle install -j $(nproc) --path vendor
+    - bundle install -j $(nproc) --path node_modules
   script: bundle exec ruby ./update.rb
   cache:
     paths:
-      - vendor/
+      - node_modules/
   # only:
     # - schedules
 
