@@ -19,7 +19,7 @@ build:
     - docker
 
 units:
-  stage: test
+  stage: test  
   image: node
   script:
     - echo "Testing App"
@@ -38,4 +38,27 @@ tslint:
     - npm run eslint
     - echo "Test successfully!"
   tags:
-    - docker
+    - docker 
+
+.dependabot:
+  image: dependabot/dependabot-core
+  variables:
+    PACKAGE_MANAGER: $CI_JOB_NAME
+  retry: 1
+  before_script:
+    - bundle install -j $(nproc) --path vendor
+  script: bundle exec ruby ./update.rb
+  cache:
+    paths:
+      - vendor/
+  # only:
+    # - schedules
+
+npm_and_yarn:
+  stage: build
+  extends: .dependabot
+  variables:
+    DEPENDABOT_UPDATE_STRATEGY: 'bump_versions'
+  only:
+    variables:
+      - $PACKAGE_MANAGER_SET =~ /(\bnpm|yarn\b)/
