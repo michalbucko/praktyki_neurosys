@@ -20,8 +20,6 @@
 .history
 .idea
 jsconfig.json
-package-lock.json
-yarn.lock
 
 
 npm-debug.log*
