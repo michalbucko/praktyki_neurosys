@@ -1,0 +1,74 @@
+{
+  "extends": [
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:jest/recommended",
+    "plugin:react-hooks/recommended",
+    "react-app"
+  ],
+   "parserOptions": {
+     "project": "./tsconfig.json"
+   },
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "jest",
+    "prettier",
+    "unused-imports"
+  ],
+   "ignorePatterns": ["src/stories/*", "public/mockServiceWorker.js"],
+   "rules": {
+     "no-param-reassign": 0,
+     "import/prefer-default-export": "off",
+     "import/no-extraneous-dependencies": "off",
+     "react/prop-types": "off",
+     "max-len": ["error", { "code": 120 }],
+     "react/jsx-uses-react": "off",
+     "react/react-in-jsx-scope": "off",
+     "react/require-default-props": 0,
+     "react/no-unused-prop-types": 0,
+     "unused-imports/no-unused-imports-ts": "error",
+     "@typescript-eslint/explicit-module-boundary-types": 0 // in many cases TS knows return type of the function so don't require to always specify it explicitly
+
+   },
+  "overrides": [
+    {
+      "files": [
+        "*.tsx"
+      ],
+      "rules": {
+        "react/jsx-props-no-spreading": 0,
+        "react/prop-types": 0
+      }
+    },
+    {
+      "files": [
+        "*.stories.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": 0
+      }
+    },
+    {
+      "files": [
+        "*/store/**/*"
+      ],
+      "rules": {
+        "no-param-reassign": 0
+      }
+    },
+    {
+      "files": [
+        "*.js"
+      ],
+      "rules": {
+        "@typescript-eslint/no-var-requires": 0
+      }
+    }
+  ]
+ }
