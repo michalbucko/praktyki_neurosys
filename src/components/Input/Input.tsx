@@ -24,7 +24,7 @@ export const getVariant = ({ variant }: StyleProps) => {
   switch (variant) {
     case InputVariant.standard:
       return css`
-        border: 10px solid grey;
+        border: 1px solid grey;
         height: 50px;
         border-radius: 5px;
         &:disabled {
@@ -34,11 +34,13 @@ export const getVariant = ({ variant }: StyleProps) => {
       `
     case InputVariant.filled:
       return css`
-        background-color: rgba(192, 192, 192, 0.9);
+        background-color: rgba(192, 192, 192, 0.4);
         border-bottom: 1px solid black;
         border-top: none;
         border-left: none;
         border-right: none;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         height: 50px;
         &:disabled {
           color: grey;
@@ -85,14 +87,13 @@ const StyledInput = styled.input<StyleProps>`
   color: ${(props) => getColor(props)};
   font-size: ${({ sizef }) => sizef};
   width: 250px;
-  height: 75px;
+  height: 50px;
   ${getVariant}
 `
 
 type StyleProps = {
   variant?: InputVariant
   color?: InputColor
-  border?: boolean
   error?: boolean
   sizef?: InputSize
 }
@@ -102,7 +103,6 @@ export type Props = {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
   variant?: InputVariant
   color?: InputColor
-  border?: boolean
   helperText?: string
   error?: boolean
   label?: string
@@ -121,7 +121,7 @@ export const Input = ({
   label,
   disabled,
   error,
-  border,
+  required,
 }: Props) => {
   return (
     <InputWrapper value={value} onChange={onChange}>
@@ -133,9 +133,9 @@ export const Input = ({
         sizef={sizef}
         variant={variant}
         placeholder={label}
+        required={required}
         disabled={disabled}
         error={error}
-        border={border}
       />
     </InputWrapper>
   )

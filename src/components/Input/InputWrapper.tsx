@@ -5,7 +5,6 @@ import styled from 'styled-components'
 type StyledInput = {
   variant?: InputVariant
   color?: InputColor
-  border?: boolean
   sizef?: InputSize
   error?: boolean
 }

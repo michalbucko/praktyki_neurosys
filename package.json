@@ -46,6 +46,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --passWithNoTests",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx src/",
+    "fix": "eslint --ext .js,.jsx,.ts,.tsx src/ --fix",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },

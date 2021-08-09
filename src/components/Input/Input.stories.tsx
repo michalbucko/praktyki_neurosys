@@ -7,7 +7,6 @@ storiesOf('Atoms', module).add('Input', () => {
     value: text('text', ''),
     variant: select('variant', InputVariant, InputVariant.standard),
     color: select('color', InputColor, InputColor.primary),
-    border: boolean('border', false),
     helperText: text('helperText', 'Helper text'),
     error: boolean('error', false),
     label: text('label', 'Input placeholder'),
