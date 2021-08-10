@@ -20,6 +20,7 @@
 .history
 .idea
 jsconfig.json
+.vscode
 
 
 npm-debug.log*

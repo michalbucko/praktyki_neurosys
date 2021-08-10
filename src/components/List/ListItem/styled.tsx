@@ -1,12 +1,6 @@
 import styled from 'styled-components'
 
-type ItemProps = {
-  divider?: boolean
-}
-
-export const StyledItem = styled.li<ItemProps>`
-  border-bottom: ${({ divider }) => divider && '1px solid #cccc'};
-  padding-bottom: ${({ divider }) => divider && '10px'};
+export const StyledItem = styled.li`
   margin: 0px;
   align-self: center;
   display: grid;

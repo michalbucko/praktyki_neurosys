@@ -10,23 +10,11 @@ type Props = {
 }
 
 export const List = ({ children, header, subheader, divider, border }: Props): JSX.Element => {
-  const childrenWithOptionalProps = () => {
-    if (!Array.isArray(children)) {
-      return children
-    }
-    return children.map((child, index) => {
-      if (children.length - 1 === index) {
-        return React.cloneElement(child, { key: child.key })
-      }
-      return React.cloneElement(child, { divider, key: child.key })
-    })
-  }
-
   return (
-    <StyledList border={border}>
-      {header && <StyledHeader>{header}</StyledHeader>}
-      {subheader && <StyledSubHeader>{subheader}</StyledSubHeader>}
-      {childrenWithOptionalProps()}
+    <StyledList border={border} divider={divider}>
+      {header && <StyledHeader data-testid="header">{header}</StyledHeader>}
+      {subheader && <StyledSubHeader data-testid="subheader">{subheader}</StyledSubHeader>}
+      {children}
     </StyledList>
   )
 }
