@@ -14,7 +14,7 @@ export type Device = {
   location: string
 }
 
-export const HarwarePage = (): JSX.Element => {
+export const HardwarePage = (): JSX.Element => {
   const [devices, setDevices] = useState<Device[]>([])
   const [lastIndex, setLastIndex] = useState(0)
   const [deviceToEdit, setDeviceToEdit] = useState<Device | null>(null)

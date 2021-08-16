@@ -23,7 +23,7 @@ units:
   image: node
   script:
     - echo "Testing App"
-    - CI=true npm test
+    - CI=true yarn test
     - echo "Test successfully!"
   tags:
   - docker

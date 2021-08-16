@@ -4,7 +4,7 @@ import { List } from 'components/List'
 import { ListItem } from 'components/List/ListItem'
 import { useState } from 'react'
 
-storiesOf('Lists', module).add('List', () => {
+storiesOf('Atoms', module).add('List', () => {
   const [items, setItems] = useState(3)
   const array = Array.from(Array(items).keys())
 
