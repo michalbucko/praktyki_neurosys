@@ -1,19 +1,17 @@
 import React from 'react'
-import { Device } from 'features/HardwarePage/index'
 import Button from 'components/Button/Button'
 import { List } from 'components/List'
 import { ListItem } from 'components/List/ListItem'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { toHardwarePage } from 'routes/routes'
-import { toAddItem } from '../routes'
+import { toAddItem, toEditItem } from '../routes'
+import { useDispatchDevices, useSelectHardware } from '../hardwareSlice'
 
-type Props = {
-  devices: Device[]
-  deleteDevice: (deviceId: number) => void
-  onEditButtonClick: (deviceId: number) => void
-}
+export const HarwareList = (): JSX.Element => {
+  const { devices } = useSelectHardware()
+  const { push } = useHistory()
+  const { deleteDevice } = useDispatchDevices()
 
-export const HarwareList = ({ devices, deleteDevice, onEditButtonClick }: Props): JSX.Element => {
   return (
     <List header="Device List" divider>
       <>
@@ -25,7 +23,7 @@ export const HarwareList = ({ devices, deleteDevice, onEditButtonClick }: Props)
             Buttons={
               <>
                 <Button onClick={() => deleteDevice(device.id)}>Delete device</Button>
-                <Button onClick={() => onEditButtonClick(device.id)}>Edit</Button>
+                <Button onClick={() => push(`${toHardwarePage}${toEditItem}/${device.id}`)}>Edit</Button>
               </>
             }
           />
