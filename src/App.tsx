@@ -1,6 +1,7 @@
+import UserPage from 'features/User/UserPage'
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { toHardwarePage } from 'routes/routes'
+import { toHardwarePage, toUsersPage } from 'routes/routes'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path={toHardwarePage} exact />
+          <Route path={toUsersPage} exact component={UserPage} />
         </Switch>
       </BrowserRouter>
     </div>
