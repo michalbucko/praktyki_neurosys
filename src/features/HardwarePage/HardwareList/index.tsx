@@ -1,5 +1,5 @@
 import React from 'react'
-import { Device } from 'features/HarwarePage/index'
+import { Device } from 'features/HardwarePage/index'
 import Button from 'components/Button/Button'
 import { List } from 'components/List'
 import { ListItem } from 'components/List/ListItem'

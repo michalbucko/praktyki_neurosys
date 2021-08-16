@@ -88,7 +88,6 @@ const StyledButton = styled.button<StyledProps>`
     cursor: not-allowed;
   }
 `
-
 const Button = ({
   variant = ButtonVariant.text,
   color = ButtonColor.primary,

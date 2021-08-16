@@ -1,6 +1,6 @@
+import { Device } from 'features/HardwarePage/index'
 import React, { useState, ChangeEvent } from 'react'
 import { Input } from 'components/Input/Input'
-import { Device } from 'features/HarwarePage/index'
 import Button, { ButtonColor } from 'components/Button/Button'
 import { Link } from 'react-router-dom'
 import { toHardwarePage } from 'routes/routes'

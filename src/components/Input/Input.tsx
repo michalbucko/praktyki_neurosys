@@ -20,41 +20,97 @@ export enum InputSize {
   large = '20px',
 }
 
-export const getVariant = ({ variant }: StyleProps) => {
+export const getVariant = ({ variant, error }: StyleProps) => {
   switch (variant) {
     case InputVariant.standard:
+      if (error) {
+        return css`
+          border: 1px solid grey;
+          border-color: red;
+          border-radius: 6px;
+          padding: 10px;
+          padding-top: 12px;
+          padding-bottom: 7px;
+          &:disabled {
+            color: grey;
+            opacity: 60%;
+          }
+        `
+      }
       return css`
         border: 1px solid grey;
-        height: 50px;
-        border-radius: 5px;
+        border-radius: 6px;
+        padding: 10px;
+        padding-top: 12px;
+        padding-bottom: 7px;
         &:disabled {
           color: grey;
           opacity: 60%;
         }
       `
     case InputVariant.filled:
+      if (error) {
+        return css`
+          background-color: rgba(255, 0, 0, 0.1);
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          border-bottom: 1px solid red;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+          padding-top: 20px;
+          padding-left: 10px;
+          padding-bottom: 5px;
+          &:disabled {
+            color: grey;
+            opacity: 60%;
+            border-bottom: 1.5px grey dotted;
+          }
+        `
+      }
       return css`
         background-color: rgba(192, 192, 192, 0.4);
         border-bottom: 1px solid black;
         border-top: none;
         border-left: none;
         border-right: none;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        height: 50px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-bottom: 5px;
         &:disabled {
           color: grey;
           opacity: 60%;
-          border-bottom: 1px grey dotted;
+          border-bottom: 1.5px grey dotted;
         }
       `
     case InputVariant.outlined:
+      if (error) {
+        return css`
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          border-bottom: 1px solid black;
+          border-color: red;
+          padding-left: 0px;
+          padding-top: 20px;
+          padding-bottom: 5px;
+          &:disabled {
+            color: grey;
+            opacity: 60%;
+            border-bottom: 1px grey dotted;
+          }
+        `
+      }
       return css`
         border-bottom: 1px solid black;
         border-top: none;
         border-left: none;
         border-right: none;
-        height: 50px;
+        padding-left: 0px;
+        padding-top: 20px;
+        padding-bottom: 5px;
         &:disabled {
           color: grey;
           opacity: 60%;
@@ -86,8 +142,9 @@ export const getColor = ({ color, error }: StyleProps) => {
 const StyledInput = styled.input<StyleProps>`
   color: ${(props) => getColor(props)};
   font-size: ${({ sizef }) => sizef};
-  width: 250px;
-  height: 50px;
+  width: 150px;
+  position: relatives;
+  margin-top: 9px;
   ${getVariant}
 `
 
@@ -110,6 +167,7 @@ export type Props = {
   required?: boolean
   disabled?: boolean
   sizef?: InputSize
+  type?: string
 }
 
 export const Input = ({
@@ -117,14 +175,25 @@ export const Input = ({
   onChange,
   color,
   sizef = InputSize.medium,
+  name,
+  helperText,
   variant,
   label,
+  type,
   disabled,
   error,
   required,
 }: Props) => {
   return (
-    <InputWrapper value={value} onChange={onChange}>
+    <InputWrapper
+      value={value}
+      onChange={onChange}
+      name={name}
+      helperText={helperText}
+      variant={variant}
+      disabled={disabled}
+      error={error}
+    >
       <StyledInput
         type=""
         value={value}

@@ -5,7 +5,7 @@ import { Input, InputColor, InputSize, InputVariant, Props } from 'components/In
 storiesOf('Atoms', module).add('Input', () => {
   const props: Props = {
     value: text('text', ''),
-    variant: select('variant', InputVariant, InputVariant.standard),
+    variant: select('variant', InputVariant, InputVariant.filled),
     color: select('color', InputColor, InputColor.primary),
     helperText: text('helperText', 'Helper text'),
     error: boolean('error', false),
