@@ -80,9 +80,13 @@ const StyledButton = styled.button<StyledProps>`
   border-radius: 0.25em;
   letter-spacing: 1px;
   font-size: ${({ size }) => size};
-  width: ${({ fullWidth }) => fullWidth && '100%'};
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'fit-content')};
 
   ${getVariant}
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `
 
 const Button = ({

@@ -7,8 +7,8 @@ build:
   image: node
   script: 
     - echo "Start building App"
-    - npm install
-    - npm run build
+    - yarn install
+    - yarn build
     - echo "Build successfully!"
   artifacts:
     expire_in: 1 hour
@@ -35,7 +35,7 @@ tslint:
     - export PATH=$PATH:$PWD/node_modules/.bin/
   script:
     - echo "Linting App"
-    - npm run eslint
+    - yarn eslint
     - echo "Test successfully!"
   tags:
     - docker
