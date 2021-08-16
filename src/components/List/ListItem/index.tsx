@@ -5,9 +5,10 @@ type Props = {
   primaryText: string
   secondaryText: string
   image?: JSX.Element
+  Buttons?: JSX.Element
 }
 
-export const ListItem = ({ primaryText, secondaryText, image }: Props): JSX.Element => {
+export const ListItem = ({ primaryText, secondaryText, image, Buttons }: Props): JSX.Element => {
   return (
     <StyledItem>
       <StyledItemElement data-testid="image" position={Position.image}>
@@ -19,6 +20,7 @@ export const ListItem = ({ primaryText, secondaryText, image }: Props): JSX.Elem
       <StyledItemElement data-testid="secondaryText" position={Position.secondary}>
         {secondaryText}
       </StyledItemElement>
+      <StyledItemElement position={Position.button}>{Buttons && Buttons}</StyledItemElement>
     </StyledItem>
   )
 }
