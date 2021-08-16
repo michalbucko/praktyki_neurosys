@@ -7,14 +7,15 @@ export const StyledItem = styled.li`
   gap: 10px;
   grid-template-columns: auto 1fr;
   grid-template-areas:
-    'a b'
-    'a c';
+    'a b d'
+    'a c d';
 `
 
 export enum Position {
   image = 'a',
   primary = 'b',
   secondary = 'c',
+  button = 'd',
 }
 
 type ItemElementProps = {
