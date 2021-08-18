@@ -6,3 +6,7 @@ export type Software = {
   expDate?: string
   amount?: string
 }
+
+export type SoftwareState = {
+  softwares: Software[]
+}
