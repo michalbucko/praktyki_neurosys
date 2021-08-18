@@ -12,7 +12,7 @@ export const Routes = () => {
     <BrowserRouter>
       <Switch>
         <Route path={toHardwarePage} component={HardwarePage} />
-        <Route path={toUsersPage} exact component={UserPage} />
+        <Route path={toUsersPage} component={UserPage} />
         <Route path={toSoftwarePage} exact component={SoftwarePage} />
         <Route path="/" exact>
           <Redirect to={toHardwarePage} />

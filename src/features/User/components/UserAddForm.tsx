@@ -2,15 +2,25 @@ import styled from 'styled-components'
 import { useState } from 'react'
 import Button, { ButtonSize, ButtonVariant } from 'components/Button/Button'
 import { Input } from 'components/Input/Input'
-import { User } from 'features/User/UserPage'
+import { User } from 'features/User/User'
+import { Link, useHistory, useParams } from 'react-router-dom'
+import { toUsersPage } from 'routes/routes'
+import { nanoid } from '@reduxjs/toolkit'
+import { toList } from '../routes'
+import { useDisptachUsers, useSelectUsers } from '../usersSlice'
 
 export type FormValues = Omit<User, 'id'>
 
-type Props = {
-  onSave: (data: FormValues) => void
+type ParamProps = {
+  id?: string
 }
 
-export const UserAddForm = ({ onSave }: Props) => {
+export const UserAddForm = () => {
+  const params = useParams<ParamProps>()
+  const { users } = useSelectUsers()
+  const [userToEdit] = users.filter((user) => user.id === params.id)
+  const { push } = useHistory()
+  const { addUser, editUser } = useDisptachUsers()
   const initialValues: FormValues = {
     firstName: '',
     lastName: '',
@@ -22,7 +32,16 @@ export const UserAddForm = ({ onSave }: Props) => {
     beginDate: '',
     endDate: '',
   }
-  const [values, setValues] = useState<FormValues>(initialValues)
+
+  const getInitialState = () => {
+    if (userToEdit) {
+      const { id, ...rest } = userToEdit
+      return rest
+    }
+    return initialValues
+  }
+
+  const [values, setValues] = useState<FormValues>(getInitialState)
 
   const onChange = (name: keyof FormValues, value: string) => {
     setValues((state) => ({
@@ -33,9 +52,21 @@ export const UserAddForm = ({ onSave }: Props) => {
 
   const resetForm = () => setValues(initialValues)
 
-  const onSubmit = () => {
-    onSave(values)
-    resetForm()
+  const onSubmit = (): void => {
+    if (userToEdit) {
+      const { id } = userToEdit
+      editUser({
+        id,
+        ...values,
+      })
+    } else {
+      addUser({
+        id: nanoid(),
+        ...values,
+      })
+    }
+    setValues(initialValues)
+    push(`${toUsersPage}${toList}`)
   }
 
   const dateStringUndefined = (data: Date | string | undefined) => {
@@ -50,7 +81,9 @@ export const UserAddForm = ({ onSave }: Props) => {
   }
 
   return (
-    <FormWrapper>
+    <>
+      <Link to={`${toUsersPage}${toList}`}>Go back</Link>
+      <h2>{userToEdit ? 'Edit user' : 'Add new user'}</h2>
       <Input label="First name" value={values.firstName} onChange={(e) => onChange('firstName', e.target.value)} />
       <Input label="Last name" value={values.lastName} onChange={(e) => onChange('lastName', e.target.value)} />
       <Input label="Role" value={values.role} onChange={(e) => onChange('role', e.target.value)} />
@@ -78,16 +111,12 @@ export const UserAddForm = ({ onSave }: Props) => {
           Reset
         </Button>
         <Button size={ButtonSize.small} variant={ButtonVariant.outlined} onClick={onSubmit}>
-          Add
+          {userToEdit ? 'Edit' : 'Add'}
         </Button>
       </ButtonsWrapper>
-    </FormWrapper>
+    </>
   )
 }
-
-const FormWrapper = styled.div`
-  padding: 20px;
-`
 
 const ButtonsWrapper = styled.div`
   display: flex;
