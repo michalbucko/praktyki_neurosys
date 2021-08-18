@@ -1,20 +1,25 @@
-import { Device } from 'features/HardwarePage/index'
+import { Device } from 'features/HardwarePage/device'
 import React, { useState, ChangeEvent } from 'react'
 import { Input } from 'components/Input/Input'
 import Button, { ButtonColor } from 'components/Button/Button'
-import { Link } from 'react-router-dom'
+import { Link, useHistory, useParams } from 'react-router-dom'
 import { toHardwarePage } from 'routes/routes'
+import { nanoid } from '@reduxjs/toolkit'
 import { toList } from '../routes'
+import { useDispatchDevices, useSelectHardware } from '../hardwareSlice'
 
 export type FormValues = Omit<Device, 'id'>
 
-type Props = {
-  addDevice: (device: Omit<Device, 'id'>) => void
-  editDevice: (device: Omit<Device, 'id'>, id: number) => void
-  deviceToEdit: Device | null
+type ParamProps = {
+  id?: string
 }
 
-export const HardwareForm = ({ addDevice, deviceToEdit, editDevice }: Props): JSX.Element => {
+export const HardwareForm = (): JSX.Element => {
+  const params = useParams<ParamProps>()
+  const { devices } = useSelectHardware()
+  const [deviceToEdit] = devices.filter((device) => device.id === params.id)
+  const { push } = useHistory()
+  const { addDevice, editDevice } = useDispatchDevices()
   const initialState: FormValues = {
     type: '',
     brand: '',
@@ -25,8 +30,8 @@ export const HardwareForm = ({ addDevice, deviceToEdit, editDevice }: Props): JS
 
   const getInitialState = () => {
     if (deviceToEdit) {
-      const { id, ...editFormValues } = deviceToEdit
-      return editFormValues
+      const { id, ...restProps } = deviceToEdit
+      return restProps
     }
     return initialState
   }
@@ -40,22 +45,27 @@ export const HardwareForm = ({ addDevice, deviceToEdit, editDevice }: Props): JS
     }))
   }
 
-  const handleReset = (): void => setFormValues(initialState)
-
   const handleSubmit = (): void => {
     if (deviceToEdit) {
       const { id } = deviceToEdit
-      editDevice(formValues, id)
+      editDevice({
+        id,
+        ...formValues,
+      })
     } else {
-      addDevice(formValues)
+      addDevice({
+        id: nanoid(),
+        ...formValues,
+      })
     }
-    handleReset()
+    setFormValues(initialState)
+    push(`${toHardwarePage}${toList}`)
   }
 
   return (
     <div className="item">
       <Link to={`${toHardwarePage}${toList}`}>Go back</Link>
-      <h2>Add new devide:</h2>
+      <h2>{deviceToEdit ? 'Edit' : 'Add new'} device:</h2>
       <Input
         value={formValues.type}
         onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange('type', e.target.value)}
@@ -83,7 +93,7 @@ export const HardwareForm = ({ addDevice, deviceToEdit, editDevice }: Props): JS
       />
       <p>
         <Button onClick={handleSubmit}>{deviceToEdit ? 'Edit' : 'Add'}</Button>
-        <Button color={ButtonColor.secondary} onClick={handleReset}>
+        <Button color={ButtonColor.secondary} onClick={() => setFormValues(initialState)}>
           Reset
         </Button>
       </p>
