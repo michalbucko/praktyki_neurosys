@@ -1,43 +1,41 @@
-import Button, { ButtonSize } from 'components/Button/Button'
+import Button from 'components/Button/Button'
 import { List } from 'components/List'
 import { ListItem } from 'components/List/ListItem'
-import { User } from 'features/User/UserPage'
+import { Link, useHistory } from 'react-router-dom'
+import { toUsersPage } from 'routes/routes'
 import styled from 'styled-components'
+import { toAddUser, toEditItem } from '../routes'
+import { useDisptachUsers, useSelectUsers } from '../usersSlice'
 
-type Props = {
-  users: User[]
-  onRemove: (userId: number) => void
-}
+export const UsersList = () => {
+  const { users } = useSelectUsers()
+  const { push } = useHistory()
+  const { removeUser } = useDisptachUsers()
 
-export const UsersList = ({ users, onRemove }: Props) => {
   return (
-    <List border divider header="Użytkownicy">
-      <ListElements>
+    <StyledList divider header="Users">
+      <>
         {users.map((user) => (
-          <ListElement key={user.id}>
-            <ListItem
-              primaryText={`${user.firstName} ${user.lastName}`}
-              secondaryText={`${user.location} - ${user.position}`}
-            />
-            <Button size={ButtonSize.small} onClick={() => onRemove(user.id)}>
-              Remove
-            </Button>
-          </ListElement>
+          <ListItem
+            key={user.id}
+            primaryText={`${user.firstName} ${user.lastName}`}
+            secondaryText={`${user.location} - ${user.position}`}
+            Buttons={
+              <>
+                <Button onClick={() => push(`${toUsersPage}${toEditItem}/${user.id}`)}>Edit</Button>
+                <Button onClick={() => removeUser(user.id)}>Remove</Button>
+              </>
+            }
+          />
         ))}
-      </ListElements>
-    </List>
+        <Link to={`${toUsersPage}${toAddUser}`}>Add new user</Link>
+      </>
+    </StyledList>
   )
 }
 
-const ListElements = styled.div`
-  display: grid;
-  row-gap: 30px;
-`
-const ListElement = styled.div`
-  border: 1px solid #ddd;
-  padding: 10px 5px;
-  display: grid;
-  row-gap: 10px;
+const StyledList = styled(List)`
+  width: 500px;
 `
 
 export default UsersList
