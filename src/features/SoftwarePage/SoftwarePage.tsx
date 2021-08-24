@@ -1,66 +1,62 @@
-import { HorizontalSplit } from 'components/HorizontalSplit/HorizontalSplit'
-import { Redirect, Route, Switch, useHistory, useRouteMatch } from 'react-router'
-import Button, { ButtonVariant } from 'components/Button/Button'
-import { AddEditSoftware } from './components/AddEditSoftware'
-import { SoftwareList } from './components/SoftwareList'
+import { Redirect, Route, Switch, useRouteMatch } from 'react-router'
+import { Container, Grid } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+import { AddEditSoftware } from './components/AddEditSoftware/AddEditSoftware'
 import { toAddItem, toEditItem, toList } from './routes'
+import { SoftwareList } from './components/SoftwareList/SoftwareList'
+
+const useStyles = makeStyles({
+  gridContainer: {
+    backgroundColor: '#fff',
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
+})
 
 export const SoftwarePage = () => {
+  const { gridContainer } = useStyles()
   const { path } = useRouteMatch()
-  const { push } = useHistory()
 
   return (
-    <>
-      <Switch>
-        <Route path={`${path}${toEditItem}/:id`}>
-          <HorizontalSplit
-            leftSide={<AddEditSoftware />}
-            rightSide={
-              <Button
-                variant={ButtonVariant.outlined}
-                onClick={() => {
-                  push(`${path}${toList}`)
-                }}
-              >
-                List
-              </Button>
-            }
-          />
-        </Route>
-        <Route path={`${path}${toList}`}>
-          <HorizontalSplit
-            leftSide={
-              <Button
-                variant={ButtonVariant.outlined}
-                onClick={() => {
-                  push(`${path}${toAddItem}`)
-                }}
-              >
-                Add
-              </Button>
-            }
-            rightSide={<SoftwareList />}
-          />
-        </Route>
-        <Route path={`${path}${toAddItem}`}>
-          <HorizontalSplit
-            leftSide={<AddEditSoftware />}
-            rightSide={
-              <Button
-                variant={ButtonVariant.outlined}
-                onClick={() => {
-                  push(`${path}${toList}`)
-                }}
-              >
-                List
-              </Button>
-            }
-          />
-        </Route>
-        <Route path={`${path}`} exact>
-          <Redirect to={`${path}${toList}`} />
-        </Route>
-      </Switch>
-    </>
+    <Switch>
+      <Route path={`${path}${toEditItem}/:id`}>
+        <Grid container spacing={1}>
+          <Grid item xs={3} spacing={1} />
+          <Grid item xs={6} spacing={4} alignItems="center">
+            <Container className={gridContainer} maxWidth="xl">
+              <AddEditSoftware />
+            </Container>
+          </Grid>
+          <Grid item xs={3} spacing={1} />
+        </Grid>
+      </Route>
+      <Route path={`${path}${toAddItem}`}>
+        <Grid container spacing={1}>
+          <Grid item xs={3} spacing={1} />
+          <Grid item xs={6} spacing={4} alignItems="center">
+            <Container className={gridContainer} maxWidth="xl">
+              <AddEditSoftware />
+            </Container>
+          </Grid>
+          <Grid item xs={3} spacing={1} />
+        </Grid>
+      </Route>
+      <Route path={`${path}${toList}`}>
+        <Grid container spacing={1}>
+          <Grid item xs={2} spacing={1} />
+          <Grid item xs={8} spacing={4} alignItems="center">
+            <Container className={gridContainer} maxWidth="xl">
+              <SoftwareList />
+            </Container>
+          </Grid>
+          <Grid item xs={2} spacing={1} />
+        </Grid>
+      </Route>
+      <Route path={`${path}`} exact>
+        <Redirect to={`${path}${toList}`} />
+      </Route>
+    </Switch>
   )
 }

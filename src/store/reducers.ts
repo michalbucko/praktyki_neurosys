@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit'
 import hardwareState from 'features/HardwarePage/hardwareSlice'
-import { softwareSlice } from 'features/SoftwarePage/slice'
+import { softwareSlice } from 'features/SoftwarePage/SoftwareSlice'
 import usersState from 'features/User/usersSlice'
 
 export const getReducer = () =>

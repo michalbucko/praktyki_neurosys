@@ -8,8 +8,8 @@ type Props = {
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 21% 25%;
-  gap: 45%;
+  grid-template-columns: 25% 25%;
+  gap: 50%;
 `
 export const Element = styled.div`
   padding: 20px;
