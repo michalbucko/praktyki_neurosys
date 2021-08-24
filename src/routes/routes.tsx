@@ -1,4 +1,4 @@
-import { HardwarePage } from 'features/HardwarePage'
+import { HardwarePage } from 'features/HardwarePage/HardwarePage'
 import { SoftwarePage } from 'features/SoftwarePage/SoftwarePage'
 import UserPage from 'features/User/UserPage'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'

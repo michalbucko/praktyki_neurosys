@@ -1,13 +1,13 @@
 import { bindActionCreators, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store/store'
-import { Device, DevicesState } from './device'
+import { Device, DevicesState } from './types'
 
 const initialState: DevicesState = {
   devices: [],
 }
 
-export const hardwareSlice = createSlice({
+const hardwareSlice = createSlice({
   name: 'hardwareState',
   initialState,
   reducers: {
