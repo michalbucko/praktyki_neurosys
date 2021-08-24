@@ -1,0 +1,296 @@
+[33mcf6192f[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/hardwareFeature-styling-with-MaterialUI[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mPBI-16-/-operation-history[m[33m)[m HEAD@{0}: rebase (finish): returning to refs/heads/feature/hardwareFeature-styling-with-MaterialUI
+[33mcf6192f[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/hardwareFeature-styling-with-MaterialUI[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mPBI-16-/-operation-history[m[33m)[m HEAD@{1}: rebase (start): checkout main
+[33m421a80d[m[33m ([m[1;31morigin/feature/hardwareFeature-styling-with-MaterialUI[m[33m)[m HEAD@{2}: checkout: moving from main to feature/hardwareFeature-styling-with-MaterialUI
+[33mcf6192f[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/hardwareFeature-styling-with-MaterialUI[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mPBI-16-/-operation-history[m[33m)[m HEAD@{3}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to main
+[33m421a80d[m[33m ([m[1;31morigin/feature/hardwareFeature-styling-with-MaterialUI[m[33m)[m HEAD@{4}: checkout: moving from main to feature/hardwareFeature-styling-with-MaterialUI
+[33mcf6192f[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/hardwareFeature-styling-with-MaterialUI[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mPBI-16-/-operation-history[m[33m)[m HEAD@{5}: checkout: moving from PBI-16-/-operation-history to main
+[33mcf6192f[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/hardwareFeature-styling-with-MaterialUI[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mPBI-16-/-operation-history[m[33m)[m HEAD@{6}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to PBI-16-/-operation-history
+[33m421a80d[m[33m ([m[1;31morigin/feature/hardwareFeature-styling-with-MaterialUI[m[33m)[m HEAD@{7}: commit (amend): added types.ts file
+[33m61064a2[m HEAD@{8}: checkout: moving from PBI-16-/-operation-history to feature/hardwareFeature-styling-with-MaterialUI
+[33mcf6192f[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/hardwareFeature-styling-with-MaterialUI[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mPBI-16-/-operation-history[m[33m)[m HEAD@{9}: rebase (finish): returning to refs/heads/PBI-16-/-operation-history
+[33mcf6192f[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/hardwareFeature-styling-with-MaterialUI[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mPBI-16-/-operation-history[m[33m)[m HEAD@{10}: rebase (start): checkout main
+[33ma1549df[m HEAD@{11}: checkout: moving from main to PBI-16-/-operation-history
+[33mcf6192f[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/hardwareFeature-styling-with-MaterialUI[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mPBI-16-/-operation-history[m[33m)[m HEAD@{12}: pull: Fast-forward
+[33m751a110[m HEAD@{13}: checkout: moving from PBI-16-/-operation-history to main
+[33ma1549df[m HEAD@{14}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to PBI-16-/-operation-history
+[33m61064a2[m HEAD@{15}: commit: added types.ts file
+[33m4027337[m HEAD@{16}: commit (amend): Merge branch 'PBI-12/materialui-components' into 'main'
+[33m54909d3[m HEAD@{17}: checkout: moving from PBI-16-/-operation-history to feature/hardwareFeature-styling-with-MaterialUI
+[33ma1549df[m HEAD@{18}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to PBI-16-/-operation-history
+[33m54909d3[m HEAD@{19}: rebase (continue) (finish): returning to refs/heads/feature/hardwareFeature-styling-with-MaterialUI
+[33m54909d3[m HEAD@{20}: commit (amend): Merge branch 'PBI-12/materialui-components' into 'main'
+[33m751a110[m HEAD@{21}: rebase (start): checkout main
+[33m78f99f5[m HEAD@{22}: checkout: moving from main to feature/hardwareFeature-styling-with-MaterialUI
+[33m751a110[m HEAD@{23}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to main
+[33m78f99f5[m HEAD@{24}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to feature/hardwareFeature-styling-with-MaterialUI
+[33m78f99f5[m HEAD@{25}: commit (amend): changed feature components files names and added dateFormat file
+[33m362cdd3[m HEAD@{26}: checkout: moving from PBI-16-/-operation-history to feature/hardwareFeature-styling-with-MaterialUI
+[33ma1549df[m HEAD@{27}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to PBI-16-/-operation-history
+[33m362cdd3[m HEAD@{28}: rebase (continue) (finish): returning to refs/heads/feature/hardwareFeature-styling-with-MaterialUI
+[33m362cdd3[m HEAD@{29}: rebase (continue) (pick): changed feature components files names and added dateFormat file
+[33m47f832e[m HEAD@{30}: commit (amend): Merge branch 'PBI-12/materialui-components' into 'main'
+[33m751a110[m HEAD@{31}: rebase (start): checkout main
+[33m3c2e53a[m HEAD@{32}: checkout: moving from main to feature/hardwareFeature-styling-with-MaterialUI
+[33m751a110[m HEAD@{33}: pull: Fast-forward
+[33ma1549df[m HEAD@{34}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to main
+[33m3c2e53a[m HEAD@{35}: rebase (finish): returning to refs/heads/feature/hardwareFeature-styling-with-MaterialUI
+[33m3c2e53a[m HEAD@{36}: rebase (pick): changed feature components files names and added dateFormat file
+[33m9ee591b[m HEAD@{37}: rebase (pick): feature/hardwareFeature-styling-with-MaterialUI
+[33ma1549df[m HEAD@{38}: rebase (start): checkout main
+[33m55cb123[m HEAD@{39}: checkout: moving from main to feature/hardwareFeature-styling-with-MaterialUI
+[33ma1549df[m HEAD@{40}: checkout: moving from PBI-16-/-operation-history to main
+[33ma1549df[m HEAD@{41}: checkout: moving from main to PBI-16-/-operation-history
+[33ma1549df[m HEAD@{42}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to main
+[33m55cb123[m HEAD@{43}: commit: changed feature components files names and added dateFormat file
+[33me2e2eae[m HEAD@{44}: commit (amend): feature/hardwareFeature-styling-with-MaterialUI
+[33m7a8f7f3[m HEAD@{45}: commit (amend): feature/hardwareFeature-styling-with-MaterialUI
+[33mf2c2afd[m HEAD@{46}: commit (amend): feature/hardwareFeature-styling-with-MaterialUI
+[33mca5469f[m HEAD@{47}: commit (amend): feature/hardwareFeature-styling-with-MaterialUI
+[33mfa2d69f[m HEAD@{48}: commit (amend): feature/hardwareFeature-styling-with-MaterialUI
+[33m015cc3c[m HEAD@{49}: checkout: moving from main to feature/hardwareFeature-styling-with-MaterialUI
+[33ma1549df[m HEAD@{50}: pull: Fast-forward
+[33m6ad495d[m HEAD@{51}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to main
+[33m015cc3c[m HEAD@{52}: commit (amend): feature/hardwareFeature-styling-with-MaterialUI
+[33m842dc9a[m HEAD@{53}: commit (amend): feature/hardwareFeature-styling-with-MaterialUI
+[33ma34b24f[m HEAD@{54}: commit: feature/hardwareFeature-styling-with-MaterialUI
+[33m6ad495d[m HEAD@{55}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to feature/hardwareFeature-styling-with-MaterialUI
+[33m6ad495d[m HEAD@{56}: checkout: moving from main to feature/hardwareFeature-styling-with-MaterialUI
+[33m6ad495d[m HEAD@{57}: checkout: moving from feature/hardwareFeature-styling-with-MaterialUI to main
+[33m6ad495d[m HEAD@{58}: checkout: moving from main to feature/hardwareFeature-styling-with-MaterialUI
+[33m6ad495d[m HEAD@{59}: reset: moving to HEAD~
+[33mcde9694[m HEAD@{60}: commit: feature / done hardware feature styling with Material UI
+[33m6ad495d[m HEAD@{61}: pull: Fast-forward
+[33mfe64520[m HEAD@{62}: checkout: moving from feature/hardware-module-redux-implementation to main
+[33m97d5d78[m[33m ([m[1;31morigin/feature/hardware-module-redux-implementation[m[33m, [m[1;32mfeature/hardware-module-redux-implementation[m[33m)[m HEAD@{63}: commit (amend): hardware-module-redux-implementation
+[33m4fd555c[m HEAD@{64}: commit (amend): hardware-module-redux-implementation
+[33m3a5991f[m HEAD@{65}: commit (amend): hardware-module-redux-implementation
+[33mbdd8c0f[m HEAD@{66}: checkout: moving from PBI-13-/-hardware-module-urlEdit to feature/hardware-module-redux-implementation
+[33m09848fb[m[33m ([m[1;32mPBI-13-/-hardware-module-urlEdit[m[33m)[m HEAD@{67}: commit: created new way to edit device data (by url adress)
+[33m29de956[m[33m ([m[1;31morigin/PBI-13-/-hardware-module[m[33m, [m[1;32mPBI-13-/-hardware-module[m[33m)[m HEAD@{68}: checkout: moving from PBI-13-/-hardware-module to PBI-13-/-hardware-module-urlEdit
+[33m29de956[m[33m ([m[1;31morigin/PBI-13-/-hardware-module[m[33m, [m[1;32mPBI-13-/-hardware-module[m[33m)[m HEAD@{69}: checkout: moving from PBI-13-/-hardware-module to PBI-13-/-hardware-module
+[33m29de956[m[33m ([m[1;31morigin/PBI-13-/-hardware-module[m[33m, [m[1;32mPBI-13-/-hardware-module[m[33m)[m HEAD@{70}: checkout: moving from feature/hardware-module-redux-implementation to PBI-13-/-hardware-module
+[33mbdd8c0f[m HEAD@{71}: commit: hardware-module-redux-implementation
+[33mfe64520[m HEAD@{72}: checkout: moving from main to feature/hardware-module-redux-implementation
+[33mfe64520[m HEAD@{73}: checkout: moving from PBI-13-/-hardware-module-urlEdit to main
+[33mfe64520[m HEAD@{74}: checkout: moving from main to PBI-13-/-hardware-module-urlEdit
+[33mfe64520[m HEAD@{75}: checkout: moving from PBI-13-/-hardware-module-urlEdit to main
+[33mfe64520[m HEAD@{76}: checkout: moving from main to PBI-13-/-hardware-module-urlEdit
+[33mfe64520[m HEAD@{77}: pull: Fast-forward
+[33m03f3d80[m HEAD@{78}: checkout: moving from PBI-13-/-hardware-module-urlEdit to main
+[33m0383e2a[m HEAD@{79}: commit (amend): Merge branch 'PBI-13-/-hardware-module' into 'main'
+[33m03f3d80[m HEAD@{80}: checkout: moving from main to PBI-13-/-hardware-module-urlEdit
+[33m03f3d80[m HEAD@{81}: checkout: moving from PBI-13-/-hardware-module to main
+[33m29de956[m[33m ([m[1;31morigin/PBI-13-/-hardware-module[m[33m, [m[1;32mPBI-13-/-hardware-module[m[33m)[m HEAD@{82}: checkout: moving from PBI-13-/-hadrware-module-urlEdit to PBI-13-/-hardware-module
+[33mc58a0e4[m HEAD@{83}: rebase (abort): updating HEAD
+[33m03f3d80[m HEAD@{84}: rebase (start): checkout main
+[33mc58a0e4[m HEAD@{85}: checkout: moving from PBI-13-/-hardware-module to PBI-13-/-hadrware-module-urlEdit
+[33m29de956[m[33m ([m[1;31morigin/PBI-13-/-hardware-module[m[33m, [m[1;32mPBI-13-/-hardware-module[m[33m)[m HEAD@{86}: checkout: moving from main to PBI-13-/-hardware-module
+[33m03f3d80[m HEAD@{87}: checkout: moving from PBI-13-/-hadrware-module-urlEdit to main
+[33mc58a0e4[m HEAD@{88}: checkout: moving from PBI-13-/-hadrware-module-urlEdit to PBI-13-/-hadrware-module-urlEdit
+[33mc58a0e4[m HEAD@{89}: checkout: moving from main to PBI-13-/-hadrware-module-urlEdit
+[33m03f3d80[m HEAD@{90}: pull: Fast-forward
+[33md44dd5a[m HEAD@{91}: checkout: moving from PBI-13-/-hardware-module to main
+[33m29de956[m[33m ([m[1;31morigin/PBI-13-/-hardware-module[m[33m, [m[1;32mPBI-13-/-hardware-module[m[33m)[m HEAD@{92}: commit (amend): deleted comments
+[33mdd11b15[m HEAD@{93}: rebase (continue) (finish): returning to refs/heads/PBI-13-/-hardware-module
+[33mdd11b15[m HEAD@{94}: rebase (continue) (pick): deleted comments
+[33ma5649d3[m HEAD@{95}: rebase (continue): done hardware feature component
+[33md44dd5a[m HEAD@{96}: rebase (start): checkout main
+[33mc58a0e4[m HEAD@{97}: checkout: moving from main to PBI-13-/-hardware-module
+[33md44dd5a[m HEAD@{98}: pull: Fast-forward
+[33mb3ebe24[m HEAD@{99}: checkout: moving from PBI-13-/-hardware-module to main
+[33mc58a0e4[m HEAD@{100}: checkout: moving from PBI-13-/-hadrware-module-urlEdit to PBI-13-/-hardware-module
+[33mc58a0e4[m HEAD@{101}: checkout: moving from PBI-13-/-hardware-module to PBI-13-/-hadrware-module-urlEdit
+[33mc58a0e4[m HEAD@{102}: commit: deleted comments
+[33mf2ac08f[m HEAD@{103}: commit (amend): done hardware feature component
+[33m5a157f0[m HEAD@{104}: checkout: moving from PBI-13-/-hardware-module-urlEdit to PBI-13-/-hardware-module
+[33mf67042d[m HEAD@{105}: checkout: moving from PBI-13-/-hardware-module to PBI-13-/-hardware-module-urlEdit
+[33m5a157f0[m HEAD@{106}: checkout: moving from PBI-13-/-hardware-module to PBI-13-/-hardware-module
+[33m5a157f0[m HEAD@{107}: checkout: moving from PBI-13-/-hardware-module-urlEdit to PBI-13-/-hardware-module
+[33mf67042d[m HEAD@{108}: checkout: moving from PBI-13-/-hardware-module-urlEdit to PBI-13-/-hardware-module-urlEdit
+[33mf67042d[m HEAD@{109}: commit: deleted comment
+[33m5a157f0[m HEAD@{110}: checkout: moving from PBI-13-/-hardware-module to PBI-13-/-hardware-module-urlEdit
+[33m5a157f0[m HEAD@{111}: checkout: moving from PBI-13-/-hardware-module-urlEdit to PBI-13-/-hardware-module
+[33m5a157f0[m HEAD@{112}: checkout: moving from PBI-13-/-hardware-module to PBI-13-/-hardware-module-urlEdit
+[33m5a157f0[m HEAD@{113}: checkout: moving from PBI-13-/-hardware-module-urlEdit to PBI-13-/-hardware-module
+[33m5a157f0[m HEAD@{114}: checkout: moving from PBI-13-/-hardware-module to PBI-13-/-hardware-module-urlEdit
+[33m5a157f0[m HEAD@{115}: checkout: moving from PBI-13 to PBI-13-/-hardware-module
+[33m5a157f0[m HEAD@{116}: checkout: moving from PBI-13-/-hardware-module to PBI-13
+[33m5a157f0[m HEAD@{117}: commit (amend): done hardware feature component
+[33m6622b6a[m HEAD@{118}: commit (amend): done hardware feature component
+[33m4661c70[m HEAD@{119}: commit: done hardware feature component
+[33mb3ebe24[m HEAD@{120}: checkout: moving from main to PBI-13-/-hardware-module
+[33mb3ebe24[m HEAD@{121}: pull: Fast-forward
+[33mc9a8fd8[m HEAD@{122}: checkout: moving from routing to main
+[33m6ab6d91[m[33m ([m[1;32mrouting[m[33m)[m HEAD@{123}: commit (merge): Merge branch 'routing' of https://git.neurosys.com/praktyki-2021/praktyki-frontend into routing
+[33m8a95b6b[m HEAD@{124}: checkout: moving from main to routing
+[33mc9a8fd8[m HEAD@{125}: checkout: moving from routing to main
+[33m8a95b6b[m HEAD@{126}: commit (amend): added routing
+[33md6f89eb[m HEAD@{127}: commit: added routing
+[33mc9a8fd8[m HEAD@{128}: checkout: moving from main to routing
+[33mc9a8fd8[m HEAD@{129}: pull: Fast-forward
+[33m8820f76[m HEAD@{130}: checkout: moving from routing to main
+[33m8820f76[m HEAD@{131}: checkout: moving from main to routing
+[33m8820f76[m HEAD@{132}: checkout: moving from list-tests to main
+[33m76acdb6[m[33m ([m[1;31morigin/list-tests[m[33m, [m[1;32mlist-tests[m[33m)[m HEAD@{133}: rebase (continue) (finish): returning to refs/heads/list-tests
+[33m76acdb6[m[33m ([m[1;31morigin/list-tests[m[33m, [m[1;32mlist-tests[m[33m)[m HEAD@{134}: commit (amend): Merge branch 'button/test' into 'main'
+[33m8820f76[m HEAD@{135}: rebase (start): checkout main
+[33mc111e19[m HEAD@{136}: rebase (abort): updating HEAD
+[33mc111e19[m HEAD@{137}: rebase (abort): updating HEAD
+[33mc111e19[m HEAD@{138}: commit (amend): done list tests
+[33me0c3358[m HEAD@{139}: commit: done list tests
+[33m3779184[m HEAD@{140}: reset: moving to HEAD~5
+[33mc0e0d38[m HEAD@{141}: rebase (abort): updating HEAD
+[33m8820f76[m HEAD@{142}: rebase (start): checkout main
+[33mc0e0d38[m HEAD@{143}: checkout: moving from main to list-tests
+[33m8820f76[m HEAD@{144}: pull: Fast-forward
+[33m3779184[m HEAD@{145}: checkout: moving from list-tests to main
+[33mc0e0d38[m HEAD@{146}: commit: changed max-width
+[33mddb49de[m HEAD@{147}: commit: image prop is not optional
+[33mc46bd72[m HEAD@{148}: commit: fixed List tests
+[33mf31cfc0[m HEAD@{149}: commit: fixed list divider styling
+[33m4c83131[m HEAD@{150}: commit: done list tests
+[33m3779184[m HEAD@{151}: reset: moving to HEAD~2
+[33ma8cca87[m HEAD@{152}: commit (amend): mend
+[33mf130fe8[m HEAD@{153}: rebase (continue) (finish): returning to refs/heads/list-tests
+[33mf130fe8[m HEAD@{154}: rebase (continue) (pick): mend
+[33m75b6d70[m HEAD@{155}: rebase (continue): done list tests, installed eslint fix
+[33m3779184[m HEAD@{156}: rebase (start): checkout main
+[33m33041e9[m HEAD@{157}: commit: mend
+[33m51ed821[m HEAD@{158}: checkout: moving from main to list-tests
+[33m3779184[m HEAD@{159}: reset: moving to HEAD
+[33m3779184[m HEAD@{160}: checkout: moving from list-tests to main
+[33m51ed821[m HEAD@{161}: checkout: moving from main to list-tests
+[33m3779184[m HEAD@{162}: pull: Fast-forward
+[33mc6cc8ab[m HEAD@{163}: checkout: moving from list-tests to main
+[33m51ed821[m HEAD@{164}: commit: done list tests, installed eslint fix
+[33mc6cc8ab[m HEAD@{165}: checkout: moving from main to list-tests
+[33mc6cc8ab[m HEAD@{166}: checkout: moving from list-tests to main
+[33mc6cc8ab[m HEAD@{167}: checkout: moving from main to list-tests
+[33mc6cc8ab[m HEAD@{168}: checkout: moving from main to main
+[33mc6cc8ab[m HEAD@{169}: pull: Fast-forward
+[33m87e5398[m HEAD@{170}: checkout: moving from PBI-6/list-component to main
+[33mc524d25[m[33m ([m[1;31morigin/PBI-6/list-component[m[33m, [m[1;32mPBI-6/list-component[m[33m)[m HEAD@{171}: commit: deleted test, and deleted import from App.tsx
+[33mf337589[m HEAD@{172}: commit: deleted List from App.tsx, and used ternary in handleDecrease function in stories.tsx
+[33m82737c3[m HEAD@{173}: commit: updated add and remove list item button event handlers
+[33m7e5c79f[m HEAD@{174}: commit: created List storybook component, and List component with styling
+[33m87e5398[m HEAD@{175}: reset: moving to HEAD~5
+[33m2128403[m HEAD@{176}: commit: deleted css import
+[33m15f3292[m HEAD@{177}: commit: deleted comments, changed funtion name in List, and changed list item element grid-area property
+[33mc77c029[m HEAD@{178}: commit: changed subheader font weight to default
+[33m1932829[m HEAD@{179}: commit: replaced secondaryText to longer in list item
+[33mb2198d1[m HEAD@{180}: commit: created List storybook component, and List component with styling
+[33m87e5398[m HEAD@{181}: reset: moving to HEAD~3
+[33m662ab23[m HEAD@{182}: commit: created List storybook component, added styling to List
+[33m891db95[m HEAD@{183}: reset: moving to HEAD~3
+[33ma9b731d[m HEAD@{184}: commit: created List storybook component, added styling to List
+[33m1011712[m HEAD@{185}: reset: moving to HEAD~6
+[33m424f722[m HEAD@{186}: rebase (abort): updating HEAD
+[33m3f681a4[m HEAD@{187}: rebase (squash): # This is a combination of 5 commits.
+[33m15ec053[m HEAD@{188}: rebase (squash): # This is a combination of 4 commits.
+[33m6af60e9[m HEAD@{189}: rebase (squash): # This is a combination of 3 commits.
+[33m7834046[m HEAD@{190}: rebase (squash): # This is a combination of 2 commits.
+[33m2ff0941[m HEAD@{191}: rebase (start): checkout HEAD~6
+[33m424f722[m HEAD@{192}: rebase (finish): returning to refs/heads/PBI-6/list-component
+[33m424f722[m HEAD@{193}: rebase (start): checkout HEAD~7
+[33m424f722[m HEAD@{194}: rebase (abort): updating HEAD
+[33m424f722[m HEAD@{195}: rebase (abort): updating HEAD
+[33m424f722[m HEAD@{196}: commit: changed src to get random elements
+[33me447a89[m HEAD@{197}: commit: added comments in List component
+[33m4f50059[m HEAD@{198}: commit: changed styling in item
+[33me51df21[m HEAD@{199}: commit: changed styling in list
+[33md62139d[m HEAD@{200}: commit: created List stories
+[33m2ff0941[m HEAD@{201}: commit: modified padding and maring in styled item
+[33m1011712[m HEAD@{202}: commit: added styling to list and list element styled components
+[33me458e6a[m HEAD@{203}: commit: added styling to list and header and subheader components
+[33m891db95[m HEAD@{204}: commit: added src to image
+[33mea7acdd[m HEAD@{205}: rebase (continue) (finish): returning to refs/heads/PBI-6/list-component
+[33mea7acdd[m HEAD@{206}: rebase (continue): created List component
+[33m87e5398[m HEAD@{207}: rebase (start): checkout main
+[33ma462fdd[m HEAD@{208}: commit: created List component
+[33m218a0f7[m HEAD@{209}: reset: moving to HEAD~9
+[33m94f833f[m HEAD@{210}: rebase (abort): updating HEAD
+[33m87e5398[m HEAD@{211}: rebase (start): checkout main
+[33m94f833f[m HEAD@{212}: checkout: moving from main to PBI-6/list-component
+[33m87e5398[m HEAD@{213}: pull: Fast-forward
+[33m218a0f7[m HEAD@{214}: checkout: moving from PBI-6/list-component to main
+[33m94f833f[m HEAD@{215}: checkout: moving from storybook-addon-install to PBI-6/list-component
+[33m56d2751[m[33m ([m[1;32mstorybook-addon-install[m[33m)[m HEAD@{216}: pull: Merge made by the 'recursive' strategy.
+[33m3abce1d[m HEAD@{217}: commit: updated preview.js file
+[33m54f16fb[m HEAD@{218}: checkout: moving from PBI-6/list-component to storybook-addon-install
+[33m94f833f[m HEAD@{219}: checkout: moving from storybook-addon-install to PBI-6/list-component
+[33m54f16fb[m HEAD@{220}: checkout: moving from PBI-6/list-component to storybook-addon-install
+[33m94f833f[m HEAD@{221}: checkout: moving from storybook-addon-install to PBI-6/list-component
+[33m54f16fb[m HEAD@{222}: checkout: moving from PBI-6/list-component to storybook-addon-install
+[33m94f833f[m HEAD@{223}: checkout: moving from storybook-addon-install to PBI-6/list-component
+[33m54f16fb[m HEAD@{224}: Branch: renamed refs/heads/@storybook/addon-knobs-install to refs/heads/storybook-addon-install
+[33m54f16fb[m HEAD@{226}: commit: installed "@storybook/addon-knobs" and added to addons array in storybook/main.js
+[33m218a0f7[m HEAD@{227}: checkout: moving from main to @storybook/addon-knobs-install
+[33m218a0f7[m HEAD@{228}: checkout: moving from @storybook/addon-knobs-install to main
+[33m940acfa[m[33m ([m[1;31morigin/@storybook/addon-knobs-install[m[33m)[m HEAD@{229}: commit: installed @storybook/addon-knobs
+[33m94f833f[m HEAD@{230}: checkout: moving from PBI-6/list-component to @storybook/addon-knobs-install
+[33m94f833f[m HEAD@{231}: rebase (finish): returning to refs/heads/PBI-6/list-component
+[33m94f833f[m HEAD@{232}: rebase (pick): changed image prop type and created ListItem styled component
+[33mbe1920b[m HEAD@{233}: rebase (pick): added function that adds optional props to children (divider), and created List styled component
+[33m27d3aed[m HEAD@{234}: rebase (pick): added another example List components without optional props in List
+[33m7aeffda[m HEAD@{235}: rebase (pick): deleted App.css
+[33med23d14[m HEAD@{236}: rebase (pick): mend
+[33mb2c1113[m HEAD@{237}: rebase (pick): cleared template code and used List items in App
+[33m991f579[m HEAD@{238}: rebase (pick): created ListItems component
+[33m066e598[m HEAD@{239}: rebase (pick): created List compoent
+[33m600a896[m HEAD@{240}: rebase (pick): installed eslint plugins
+[33m218a0f7[m HEAD@{241}: rebase (start): checkout main
+[33m3b9916c[m HEAD@{242}: checkout: moving from main to PBI-6/list-component
+[33m218a0f7[m HEAD@{243}: pull: Fast-forward
+[33m688e0fd[m HEAD@{244}: checkout: moving from PBI-6/list-component to main
+[33m3b9916c[m HEAD@{245}: commit: changed image prop type and created ListItem styled component
+[33mec7b487[m HEAD@{246}: commit: added function that adds optional props to children (divider), and created List styled component
+[33ma41fa43[m HEAD@{247}: commit: added another example List components without optional props in List
+[33me09bc0f[m HEAD@{248}: commit: deleted App.css
+[33m6cf815c[m HEAD@{249}: Branch: renamed refs/heads/list-component to refs/heads/PBI-6/list-component
+[33m6cf815c[m HEAD@{251}: commit (amend): mend
+[33m32490a8[m HEAD@{252}: commit (amend): mend
+[33mc733d14[m HEAD@{253}: commit: mend
+[33maa8c710[m HEAD@{254}: rebase (continue) (finish): returning to refs/heads/list-component
+[33maa8c710[m HEAD@{255}: rebase (continue): cleared template code and used List items in App
+[33m4e43c9d[m HEAD@{256}: rebase (continue) (pick): created ListItems component
+[33m2e19d72[m HEAD@{257}: rebase (continue) (pick): created List compoent
+[33ma33dbc0[m HEAD@{258}: rebase (continue): installed eslint plugins
+[33m688e0fd[m HEAD@{259}: rebase (start): checkout main
+[33m519e3bb[m HEAD@{260}: checkout: moving from main to list-component
+[33m688e0fd[m HEAD@{261}: checkout: moving from list-component to main
+[33m519e3bb[m HEAD@{262}: checkout: moving from main to list-component
+[33m688e0fd[m HEAD@{263}: checkout: moving from list-component to main
+[33m519e3bb[m HEAD@{264}: checkout: moving from main to list-component
+[33m688e0fd[m HEAD@{265}: checkout: moving from list-component to main
+[33m519e3bb[m HEAD@{266}: rebase (abort): updating HEAD
+[33m688e0fd[m HEAD@{267}: rebase (start): checkout main
+[33m519e3bb[m HEAD@{268}: checkout: moving from main to list-component
+[33m688e0fd[m HEAD@{269}: checkout: moving from list-component to main
+[33m519e3bb[m HEAD@{270}: checkout: moving from main to list-component
+[33m688e0fd[m HEAD@{271}: checkout: moving from list-component to main
+[33m519e3bb[m HEAD@{272}: rebase (abort): updating HEAD
+[33m688e0fd[m HEAD@{273}: rebase (start): checkout main
+[33m519e3bb[m HEAD@{274}: checkout: moving from main to list-component
+[33m688e0fd[m HEAD@{275}: pull: Fast-forward
+[33m6a4badb[m HEAD@{276}: checkout: moving from list-component to main
+[33m519e3bb[m HEAD@{277}: commit: cleared template code and used List items in App
+[33mbc213a4[m HEAD@{278}: commit: created ListItems component
+[33m820bc53[m HEAD@{279}: commit: created List compoent
+[33m7c1dbfa[m[33m ([m[1;31morigin/eslint-install-and-config[m[33m, [m[1;32meslint-install-and-config[m[33m)[m HEAD@{280}: checkout: moving from main to list-component
+[33m6a4badb[m HEAD@{281}: checkout: moving from delete-template-code to main
+[33meae5fca[m HEAD@{282}: commit: deleted unused logo file
+[33mf28364a[m HEAD@{283}: commit: deleted template code from App.tsx file
+[33m7c1dbfa[m[33m ([m[1;31morigin/eslint-install-and-config[m[33m, [m[1;32meslint-install-and-config[m[33m)[m HEAD@{284}: checkout: moving from list-component to delete-template-code
+[33m7c1dbfa[m[33m ([m[1;31morigin/eslint-install-and-config[m[33m, [m[1;32meslint-install-and-config[m[33m)[m HEAD@{285}: checkout: moving from eslint-install-and-config to list-component
+[33m7c1dbfa[m[33m ([m[1;31morigin/eslint-install-and-config[m[33m, [m[1;32meslint-install-and-config[m[33m)[m HEAD@{286}: commit: modified ts confing filed
+[33m0904692[m HEAD@{287}: commit: created eslint config file
+[33m0fc7570[m HEAD@{288}: commit: installed eslint plugins
+[33m6a4badb[m HEAD@{289}: checkout: moving from main to eslint-install-and-config
+[33m6a4badb[m HEAD@{290}: checkout: moving from eslint-install-and-config to main
+[33m8602bc8[m HEAD@{291}: checkout: moving from main to eslint-install-and-config
+[33m6a4badb[m HEAD@{292}: pull: Fast-forward
+[33m8602bc8[m HEAD@{293}: checkout: moving from eslint-install-and-config to main
+[33m8602bc8[m HEAD@{294}: checkout: moving from main to eslint-install-and-config
+[33m8602bc8[m HEAD@{295}: checkout: moving from eslint-install-and-config to main
+[33m8602bc8[m HEAD@{296}: checkout: moving from main to eslint-install-and-config
+[33m8602bc8[m HEAD@{297}: clone: from https://git.neurosys.com/praktyki-2021/praktyki-frontend.git
