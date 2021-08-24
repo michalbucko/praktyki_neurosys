@@ -1,28 +1,39 @@
-import UserAddForm from 'features/User/components/UserAddForm'
+import UserAddForm from 'features/User/components/UserAddForm/UserAddForm'
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router'
-import UsersList from 'features/User/components/UserList'
-import styled from 'styled-components'
+import UsersList from 'features/User/components/UserList/UserList'
+import { Container } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 import { toList, toAddUser, toEditItem } from './routes'
 
+const useStyles = makeStyles({
+  container: {
+    backgroundColor: '#fff',
+    paddingTop: 10,
+    paddingBottom: 25,
+  },
+})
+
 export const UserPage = () => {
+  const { container } = useStyles()
+
   const { path } = useRouteMatch()
 
   return (
     <Switch>
       <Route path={`${path}${toEditItem}/:id`}>
-        <Wrapper>
+        <Container className={container} maxWidth="md">
           <UserAddForm />
-        </Wrapper>
+        </Container>
       </Route>
       <Route path={`${path}${toList}`}>
-        <Wrapper>
+        <Container className={container} maxWidth="md">
           <UsersList />
-        </Wrapper>
+        </Container>
       </Route>
       <Route path={`${path}${toAddUser}`}>
-        <Wrapper>
+        <Container className={container} maxWidth="md">
           <UserAddForm />
-        </Wrapper>
+        </Container>
       </Route>
       <Route path={`${path}`} exact>
         <Redirect to={`${path}${toList}`} />
@@ -30,12 +41,5 @@ export const UserPage = () => {
     </Switch>
   )
 }
-
-const Wrapper = styled.div`
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: white;
-  padding: 15px;
-`
 
 export default UserPage
