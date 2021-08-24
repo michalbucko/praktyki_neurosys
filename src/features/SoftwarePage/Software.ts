@@ -3,7 +3,7 @@ export type Software = {
   company: string
   name: string
   category: string
-  expDate?: string
+  expDate?: Date | null
   amount?: string
 }
 
