@@ -7,8 +7,8 @@ export type User = {
   position: string
   email: string
   password?: string
-  beginDate?: Date | string
-  endDate?: Date | string
+  beginDate?: Date | null
+  endDate?: Date | null
 }
 
 export type UserState = {
