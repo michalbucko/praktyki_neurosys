@@ -13,8 +13,9 @@ export const Users = (): JSX.Element => {
 
   return (
     <>
-      {users.map((user) => (
+      {users.map((user, mapIndex) => (
         <Fragment key={user.id}>
+          {mapIndex > 0 && <Divider />}
           <ListItem disableGutters>
             <ListItemText primary={`${user.firstName} ${user.lastName}`} secondary={`${user.location}`} />
             <Box display="grid" gridAutoFlow="column" gridColumnGap={10}>
@@ -27,16 +28,19 @@ export const Users = (): JSX.Element => {
               >
                 Edit
               </Button>
-              <Button variant="contained" startIcon={<Delete />} disableElevation onClick={() => removeUser(user.id)}>
+              <Button
+                color="secondary"
+                variant="contained"
+                startIcon={<Delete />}
+                disableElevation
+                onClick={() => removeUser(user.id)}
+              >
                 Remove
               </Button>
             </Box>
           </ListItem>
-          <Divider />
         </Fragment>
       ))}
     </>
   )
 }
-
-export default Users

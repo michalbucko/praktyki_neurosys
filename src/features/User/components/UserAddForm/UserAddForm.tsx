@@ -5,7 +5,6 @@ import { toUsersPage } from 'routes/routes'
 import { nanoid } from '@reduxjs/toolkit'
 import { Box, Button, TextField, Typography } from '@material-ui/core'
 import { Add, ArrowBack, RotateLeft, Save } from '@material-ui/icons'
-import { makeStyles } from '@material-ui/styles'
 import { DatePicker } from '@material-ui/pickers'
 import { dateFormat } from 'utils/dateFormat'
 import { toList } from '../../routes'
@@ -17,15 +16,7 @@ type ParamProps = {
   id?: string
 }
 
-const useStyles = makeStyles({
-  buttonGoBack: {
-    marginBottom: 10,
-  },
-})
-
 export const UserAddForm = () => {
-  const { buttonGoBack } = useStyles()
-
   const params = useParams<ParamProps>()
   const { users } = useSelectUsers()
   const [userToEdit] = users.filter((user) => user.id === params.id)
@@ -80,12 +71,14 @@ export const UserAddForm = () => {
   }
 
   return (
-    <Box>
-      <Button className={buttonGoBack} startIcon={<ArrowBack />} onClick={() => push(`${toUsersPage}${toList}`)}>
-        Go back
-      </Button>
+    <Box maxWidth={800} mx="auto">
+      <Box my={1}>
+        <Button startIcon={<ArrowBack />} onClick={() => push(`${toUsersPage}${toList}`)}>
+          Go back
+        </Button>
+      </Box>
 
-      <Typography variant="h5" color="primary">
+      <Typography variant="h2" color="primary">
         {userToEdit ? 'Edit user' : 'Add new user'}
       </Typography>
 
@@ -149,7 +142,7 @@ export const UserAddForm = () => {
       </Box>
 
       <Box display="grid" gridAutoFlow="column" gridColumnGap={10} justifyContent="end" mt={2}>
-        <Button variant="contained" startIcon={<RotateLeft />} onClick={resetForm} disableElevation>
+        <Button color="secondary" variant="contained" startIcon={<RotateLeft />} onClick={resetForm} disableElevation>
           Reset
         </Button>
         <Button
@@ -165,5 +158,3 @@ export const UserAddForm = () => {
     </Box>
   )
 }
-
-export default UserAddForm

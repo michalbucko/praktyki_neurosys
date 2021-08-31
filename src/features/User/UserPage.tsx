@@ -1,45 +1,33 @@
-import UserAddForm from 'features/User/components/UserAddForm/UserAddForm'
+import { UserAddForm } from 'features/User/components/UserAddForm/UserAddForm'
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router'
-import UsersList from 'features/User/components/UserList/UserList'
+import { UsersList } from 'features/User/components/UserList/UserList'
+import { makeStyles } from '@material-ui/core/styles'
 import { Container } from '@material-ui/core'
-import { makeStyles } from '@material-ui/styles'
 import { toList, toAddUser, toEditItem } from './routes'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   container: {
-    backgroundColor: '#fff',
-    paddingTop: 10,
-    paddingBottom: 25,
+    backgroundColor: theme.palette.background.paper,
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(3),
   },
-})
+}))
 
-export const UserPage = () => {
+export const UserPage = (): JSX.Element => {
   const { container } = useStyles()
-
   const { path } = useRouteMatch()
 
   return (
-    <Switch>
-      <Route path={`${path}${toEditItem}/:id`}>
-        <Container className={container} maxWidth="md">
-          <UserAddForm />
-        </Container>
-      </Route>
-      <Route path={`${path}${toList}`}>
-        <Container className={container} maxWidth="md">
-          <UsersList />
-        </Container>
-      </Route>
-      <Route path={`${path}${toAddUser}`}>
-        <Container className={container} maxWidth="md">
-          <UserAddForm />
-        </Container>
-      </Route>
-      <Route path={`${path}`} exact>
-        <Redirect to={`${path}${toList}`} />
-      </Route>
-    </Switch>
+    <Container className={container} maxWidth="md">
+      <Switch>
+        <Route path={`${path}${toEditItem}/:id`} component={UserAddForm} />
+        <Route path={`${path}${toList}`} component={UsersList} />
+        <Route path={`${path}${toAddUser}`} component={UserAddForm} />
+
+        <Route path={`${path}`} exact>
+          <Redirect to={`${path}${toList}`} />
+        </Route>
+      </Switch>
+    </Container>
   )
 }
-
-export default UserPage
