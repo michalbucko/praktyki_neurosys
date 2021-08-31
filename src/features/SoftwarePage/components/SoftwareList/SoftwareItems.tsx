@@ -1,4 +1,4 @@
-import { Button, Divider, ListItem, ListItemText } from '@material-ui/core'
+import { Box, Button, Divider, ListItem, ListItemText } from '@material-ui/core'
 import { Delete, Edit } from '@material-ui/icons'
 import { Fragment } from 'react'
 import { useHistory } from 'react-router'
@@ -13,36 +13,37 @@ export const Softwares = (): JSX.Element => {
 
   return (
     <>
-      {softwares.map((software) => (
+      {softwares.map((software, mapIndex) => (
         <Fragment key={software.id}>
-          <ListItem key={software.id} disableGutters>
+          {mapIndex > 0 && <Divider />}
+          <ListItem disableGutters>
             <ListItemText
               primary={`${software.company} ${software.name}`}
               secondary={`${software.category},${software.expDate},${software.amount}`}
             />
-            <Button
-              color="primary"
-              variant="contained"
-              startIcon={<Edit />}
-              disableElevation
-              onClick={() => push(`${toSoftwarePage}${toEditItem}/${software.id}`)}
-            >
-              Edit
-            </Button>
-            <Button
-              variant="contained"
-              startIcon={<Delete />}
-              disableElevation
-              onClick={() => removeSoftware(software.id)}
-            >
-              Remove
-            </Button>
+            <Box display="grid" gridAutoFlow="column" gridColumnGap={10}>
+              <Button
+                color="primary"
+                variant="contained"
+                startIcon={<Edit />}
+                disableElevation
+                onClick={() => push(`${toSoftwarePage}${toEditItem}/${software.id}`)}
+              >
+                Edit
+              </Button>
+              <Button
+                color="secondary"
+                variant="contained"
+                startIcon={<Delete />}
+                disableElevation
+                onClick={() => removeSoftware(software.id)}
+              >
+                Remove
+              </Button>
+            </Box>
           </ListItem>
-          <Divider variant="fullWidth" />
         </Fragment>
       ))}
     </>
   )
 }
-
-export default Softwares

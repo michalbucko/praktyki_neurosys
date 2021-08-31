@@ -2,16 +2,16 @@ import { Box, Button, List, Typography } from '@material-ui/core'
 import { toUsersPage } from 'routes/routes'
 import { AddCircle } from '@material-ui/icons'
 import { useHistory } from 'react-router'
-import Users from 'features/User/components/UserList/Users'
+import { Users } from 'features/User/components/UserList/Users'
 import { toAddUser } from '../../routes'
 
 export const UsersList = () => {
   const { push } = useHistory()
 
   return (
-    <List className="list">
+    <List>
       <Box display="flex" justifyContent="space-between">
-        <Typography variant="h4" color="primary">
+        <Typography variant="h1" color="primary">
           Users
         </Typography>
         <Button startIcon={<AddCircle />} onClick={() => push(`${toUsersPage}${toAddUser}`)}>
@@ -24,5 +24,3 @@ export const UsersList = () => {
     </List>
   )
 }
-
-export default UsersList
