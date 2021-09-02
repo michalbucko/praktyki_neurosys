@@ -1,2 +1,2 @@
-export const dateFormat = 'yyyy-MM-dd'
-export const dateFormtWithTime = 'yyyy-MM-dd HH:mm'
+export const dateFormat = 'yyyy/MM/dd'
+export const dateFormatWithTime = 'yyyy/MM/dd HH:mm'

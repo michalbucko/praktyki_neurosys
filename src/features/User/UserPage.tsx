@@ -1,8 +1,9 @@
 import { UserAddForm } from 'features/User/components/UserAddForm/UserAddForm'
-import { Redirect, Route, Switch, useRouteMatch } from 'react-router'
+import { Redirect, Switch, useRouteMatch } from 'react-router'
 import { UsersList } from 'features/User/components/UserList/UserList'
 import { makeStyles } from '@material-ui/core/styles'
 import { Container } from '@material-ui/core'
+import { PrivateRoute } from 'routes/PrivateRoute'
 import { toList, toAddUser, toEditItem } from './routes'
 
 const useStyles = makeStyles((theme) => ({
@@ -20,13 +21,10 @@ export const UserPage = (): JSX.Element => {
   return (
     <Container className={container} maxWidth="md">
       <Switch>
-        <Route path={`${path}${toEditItem}/:id`} component={UserAddForm} />
-        <Route path={`${path}${toList}`} component={UsersList} />
-        <Route path={`${path}${toAddUser}`} component={UserAddForm} />
-
-        <Route path={`${path}`} exact>
-          <Redirect to={`${path}${toList}`} />
-        </Route>
+        <PrivateRoute path={`${path}${toEditItem}/:id`} component={UserAddForm} />
+        <PrivateRoute path={`${path}${toList}`} component={UsersList} />
+        <PrivateRoute path={`${path}${toAddUser}`} component={UserAddForm} />
+        <PrivateRoute path={`${path}`} exact component={() => <Redirect to={`${path}${toList}`} />} />
       </Switch>
     </Container>
   )
