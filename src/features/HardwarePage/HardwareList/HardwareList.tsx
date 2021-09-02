@@ -6,7 +6,7 @@ import { useHistory } from 'react-router'
 import { toAddItem } from '../routes'
 import { ListItems } from './ListItems/ListItems'
 
-export const HarwareList = (): JSX.Element => {
+export const HardwareList = (): JSX.Element => {
   const { push } = useHistory()
 
   return (

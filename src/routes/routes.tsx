@@ -1,24 +1,27 @@
+import { Route, Switch, Redirect } from 'react-router-dom'
+import { LoginPage } from 'features/LoginPage/LoginPage'
+
 import { Dashboard } from 'features/Dashboard/Dashboard'
 import { HardwarePage } from 'features/HardwarePage/HardwarePage'
-import { SoftwarePage } from 'features/SoftwarePage/SoftwarePage'
 import { UserPage } from 'features/User/UserPage'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { SoftwarePage } from 'features/SoftwarePage/SoftwarePage'
+import { PrivateRoute } from './PrivateRoute'
 
-export const toUsersPage = '/users'
 export const toSoftwarePage = '/software'
+export const toLoginPage = '/login'
 export const toHardwarePage = '/hardware'
+export const toUsersPage = '/users'
 export const toDashboard = '/dashboard'
 
 export const Routes = () => {
   return (
     <Switch>
-      <Route path={toDashboard} component={Dashboard} />
-      <Route path={toHardwarePage} component={HardwarePage} />
-      <Route path={toUsersPage} component={UserPage} />
-      <Route path={toSoftwarePage} component={SoftwarePage} />
-      <Route path="/" exact>
-        <Redirect to={toDashboard} />
-      </Route>
+      <Route path={toLoginPage} component={LoginPage} />
+      <PrivateRoute path={toDashboard} component={Dashboard} />
+      <PrivateRoute path={toHardwarePage} component={HardwarePage} />
+      <PrivateRoute path={toSoftwarePage} component={SoftwarePage} />
+      <PrivateRoute path={toUsersPage} component={UserPage} />
+      <Redirect to={toDashboard} />
     </Switch>
   )
 }

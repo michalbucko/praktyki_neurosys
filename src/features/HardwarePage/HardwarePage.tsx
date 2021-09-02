@@ -1,9 +1,10 @@
 import React from 'react'
 import { Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom'
+import { Redirect, Switch, useRouteMatch } from 'react-router-dom'
+import { PrivateRoute } from 'routes/PrivateRoute'
 import { HardwareForm } from './HardwareForm/HardwareForm'
-import { HarwareList } from './HardwareList/HardwareList'
+import { HardwareList } from './HardwareList/HardwareList'
 import { toAddItem, toEditItem, toList } from './routes'
 
 const useStyles = makeStyles((theme) => ({
@@ -21,13 +22,10 @@ export const HardwarePage = (): JSX.Element => {
   return (
     <Container className={container} maxWidth="md">
       <Switch>
-        <Route path={`${path}${toEditItem}/:id`} component={HardwareForm} />
-        <Route path={`${path}${toList}`} component={HarwareList} />
-        <Route path={`${path}${toAddItem}`} component={HardwareForm} />
-
-        <Route path={`${path}`} exact>
-          <Redirect to={`${path}${toList}`} />
-        </Route>
+        <PrivateRoute path={`${path}${toEditItem}/:id`} component={HardwareForm} />
+        <PrivateRoute path={`${path}${toList}`} component={HardwareList} />
+        <PrivateRoute path={`${path}${toAddItem}`} component={HardwareForm} />
+        <PrivateRoute path={`${path}`} exact component={() => <Redirect to={`${path}${toList}`} />} />
       </Switch>
     </Container>
   )

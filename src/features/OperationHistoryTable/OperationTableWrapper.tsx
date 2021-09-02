@@ -3,7 +3,7 @@ import { Container } from '@material-ui/core'
 import { Column } from '@material-table/core'
 import { makeStyles } from '@material-ui/core/styles'
 import format from 'date-fns/format'
-import { dateFormtWithTime } from 'utils/dateFormat'
+import { dateFormatWithTime } from 'utils/dateFormat'
 import { Operation, useDispatchHistory } from './historySlice'
 import { DataTable } from '../../components/DataTable/DataTable'
 
@@ -14,7 +14,7 @@ const columns: Column<Operation>[] = [
   {
     title: 'Operation Date',
     field: 'operationDate',
-    render: ({ operationDate }) => <span>{format(new Date(operationDate), dateFormtWithTime)}</span>,
+    render: ({ operationDate }) => <span>{format(new Date(operationDate), dateFormatWithTime)}</span>,
   },
 ]
 
