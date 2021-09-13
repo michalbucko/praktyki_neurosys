@@ -1,5 +1,5 @@
 import { bindActionCreators, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { User } from 'features/User/User'
+import { User } from 'features/User/types'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store/store'
 import { useInjectSaga } from 'redux-injectors'

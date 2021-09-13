@@ -11,13 +11,17 @@ export const Users = (): JSX.Element => {
   const { users } = useSelectUsers()
   const { removeUser } = useDisptachUsers()
 
+  const onRemove = (id: number) => {
+    removeUser(id)
+  }
+
   return (
     <>
-      {users.map((user, mapIndex) => (
+      {users.data.map((user, mapIndex) => (
         <Fragment key={user.id}>
           {mapIndex > 0 && <Divider />}
           <ListItem disableGutters>
-            <ListItemText primary={`${user.firstName} ${user.lastName}`} secondary={`${user.location}`} />
+            <ListItemText primary={`${user.firstName} ${user.lastName}`} secondary={`${user.position}`} />
             <Box display="grid" gridAutoFlow="column" gridColumnGap={10}>
               <Button
                 color="primary"
@@ -33,7 +37,7 @@ export const Users = (): JSX.Element => {
                 variant="contained"
                 startIcon={<Delete />}
                 disableElevation
-                onClick={() => removeUser(user.id)}
+                onClick={() => onRemove(user.id)}
               >
                 Remove
               </Button>

@@ -2,9 +2,9 @@ import { Box, Button, TextField, Typography } from '@material-ui/core'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { LockOpen } from '@material-ui/icons'
+import { getTextFieldParams } from 'utils/getTextFieldParams'
 import { useDispatchLogin } from '../LoginSlice'
 import { AuthType } from '../AuthType'
-import { getTextFieldParams } from './getTextFieldParams'
 
 export const LoginForm = () => {
   const { logIn } = useDispatchLogin()
