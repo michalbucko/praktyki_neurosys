@@ -1,5 +1,4 @@
-import { Route, Switch, Redirect } from 'react-router-dom'
-import { LoginPage } from 'features/LoginPage/LoginPage'
+import { Switch, Redirect } from 'react-router-dom'
 
 import { Dashboard } from 'features/Dashboard/Dashboard'
 import { HardwarePage } from 'features/HardwarePage/HardwarePage'
@@ -16,7 +15,6 @@ export const toDashboard = '/dashboard'
 export const Routes = () => {
   return (
     <Switch>
-      <Route path={toLoginPage} component={LoginPage} />
       <PrivateRoute path={toDashboard} component={Dashboard} />
       <PrivateRoute path={toHardwarePage} component={HardwarePage} />
       <PrivateRoute path={toSoftwarePage} component={SoftwarePage} />

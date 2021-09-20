@@ -2,6 +2,7 @@ import { AppBar, Grid, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import LogoSvg from 'utils/svg/neurosys-logo-white.svg'
 import { AppbarMenu } from 'theme/components/AppbarMenu'
+import { useSelectLogin } from 'features/LoginPage/LoginSlice'
 
 export const appBarHeight = 50
 
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const Appbar = () => {
   const { appBar, logo } = useStyles()
+  const { user } = useSelectLogin()
 
   return (
     <AppBar className={appBar} position="static">
@@ -29,7 +31,9 @@ export const Appbar = () => {
 
       <Grid container alignItems="center" spacing={1} justifyContent="flex-end">
         <Grid item>
-          <Typography>Jan Kowalski</Typography>
+          <Typography>
+            {user?.firstName} {user?.lastName}
+          </Typography>
         </Grid>
         <Grid item>
           <AppbarMenu />

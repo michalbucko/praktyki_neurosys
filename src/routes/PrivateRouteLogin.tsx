@@ -9,14 +9,18 @@ type Props = {
   exact?: boolean
 }
 
-export const PrivateRoute = ({ component: Component, ...rest }: Props) => {
+export const PrivateRouteLogin = ({ component: Component, ...rest }: Props) => {
   const { isAuth } = useSelectLogin()
 
   return (
     <Route
       {...rest}
       render={(props) =>
-        isAuth ? <Component {...props} /> : <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
+        isAuth ? (
+          <Redirect to={{ pathname: '/dashboard', state: { from: props.location } }} />
+        ) : (
+          <Component {...props} />
+        )
       }
     />
   )

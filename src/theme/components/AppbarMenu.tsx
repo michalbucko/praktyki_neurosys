@@ -2,6 +2,7 @@ import { IconButton, Menu, MenuItem } from '@material-ui/core'
 import { MoreVert } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
 import { useState } from 'react'
+import { useDispatchLogin } from 'features/LoginPage/LoginSlice'
 
 const useStyles = makeStyles((theme) => ({
   menuIcon: {
@@ -12,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
 export const AppbarMenu = () => {
   const { menuIcon } = useStyles()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const { logOut } = useDispatchLogin()
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(e.currentTarget)
@@ -21,6 +23,11 @@ export const AppbarMenu = () => {
     setAnchorEl(null)
   }
 
+  const SignOut = () => {
+    setAnchorEl(null)
+    logOut()
+  }
+
   return (
     <>
       <IconButton aria-controls="appBarMenu" aria-haspopup="true" onClick={handleClick}>
@@ -28,7 +35,7 @@ export const AppbarMenu = () => {
       </IconButton>
       <Menu id="appBarMenu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
         <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={SignOut}>Logout</MenuItem>
       </Menu>
     </>
   )

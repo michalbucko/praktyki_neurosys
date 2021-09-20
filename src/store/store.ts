@@ -1,17 +1,26 @@
 import { configureStore, ThunkAction, Action, applyMiddleware } from '@reduxjs/toolkit'
+import { createInjectorsEnhancer } from 'redux-injectors'
 import { createLogger } from 'redux-logger'
+import createSagaMiddleware from 'redux-saga'
+import thunk from 'redux-thunk'
 import { getReducer } from './reducers'
 
 const logger = createLogger()
+const sagaMiddleware = createSagaMiddleware()
 
-const enhancers = []
+const injectorsEnhancer = createInjectorsEnhancer({
+  createReducer: getReducer,
+  runSaga: sagaMiddleware.run,
+})
+
+const enhancers = [injectorsEnhancer]
 if (process.env.NODE_ENV === 'development' || process.env.REACT_APP_LOGGER === 'true') {
   enhancers.push(applyMiddleware(logger))
 }
 
 export const store = configureStore({
   reducer: getReducer(),
-  middleware: [],
+  middleware: [thunk, sagaMiddleware],
   enhancers,
   devTools: process.env.REACT_APP_LOGGER === 'true',
 })
