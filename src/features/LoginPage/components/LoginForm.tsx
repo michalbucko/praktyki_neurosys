@@ -1,9 +1,6 @@
 import { Box, Button, TextField, Typography } from '@material-ui/core'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { toSoftwarePage } from 'routes/routes'
-import { toList } from 'features/SoftwarePage/routes'
-import { useHistory } from 'react-router'
 import { LockOpen } from '@material-ui/icons'
 import { useDispatchLogin } from '../LoginSlice'
 import { AuthType } from '../AuthType'
@@ -11,7 +8,6 @@ import { getTextFieldParams } from './getTextFieldParams'
 
 export const LoginForm = () => {
   const { logIn } = useDispatchLogin()
-  const { push } = useHistory()
 
   const initialValues: AuthType = {
     email: '',
@@ -28,7 +24,6 @@ export const LoginForm = () => {
     validationSchema,
     onSubmit: (values) => {
       logIn(values)
-      push(`${toSoftwarePage}${toList}`)
     },
   })
 
