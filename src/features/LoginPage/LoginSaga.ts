@@ -1,6 +1,6 @@
 import { PayloadAction } from '@reduxjs/toolkit'
 import { push } from 'connected-react-router'
-import { User } from 'features/User/User'
+import { User } from 'features/User/types'
 import { takeLatest, put } from 'redux-saga/effects'
 import { getToken, setAuth } from 'utils/getToken'
 import { setAccessToken, removeAccessToken, getAccessToken } from 'utils/setAccessToken'
