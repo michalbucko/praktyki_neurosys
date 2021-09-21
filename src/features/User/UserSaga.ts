@@ -2,9 +2,6 @@ import { put, takeLatest } from 'redux-saga/effects'
 import {
   addUser,
   editUser,
-  fetchLocation,
-  fetchLocationFail,
-  fetchLocationSuccess,
   fetchUsers,
   fetchUsersFail,
   fetchUsersSuccess,
@@ -12,22 +9,20 @@ import {
   fetchUserToEditSuccess,
   fetchUserToEditFail,
   removeUser,
-  removeUserSuccess,
-  addUserSuccess,
-  addUserFail,
-  editUserSuccess,
-  editUserFail,
-  removeUserFail,
 } from 'features/User/usersSlice'
 import { PayloadAction } from '@reduxjs/toolkit'
-import { deleteUser, getLocation, getUserById, getUsers, patchUser, postUser } from './api'
-import { PayloadActionAddUser, PayloadActionEditUser } from './types'
+import { addMessage } from 'shared/Notification/notificationsSlice'
+import { NotificationType } from 'shared/Notification/types'
+import { getErrorMessage } from 'utils/getMessage'
+import { TablePaginationPropsTypes } from 'utils/types/types'
+import { AddUser, EditUser } from './types'
+import { deleteUser, getUserById, getUsers, patchUser, postUser } from './api'
 
-function* workerFetchUsers() {
+function* workerFetchUsers(action: PayloadAction<TablePaginationPropsTypes>) {
   try {
-    const { data } = yield getUsers()
+    const { data } = yield getUsers(action)
     yield put(fetchUsersSuccess(data))
-  } catch {
+  } catch (e) {
     yield put(fetchUsersFail())
   }
 }
@@ -44,39 +39,67 @@ function* workerFetchUserToEdit(action: PayloadAction<string>) {
 function* workerRemoveUser(action: PayloadAction<number>) {
   try {
     yield deleteUser(action)
-    yield put(removeUserSuccess())
-    yield put(fetchUsers())
-  } catch {
-    yield put(removeUserFail())
+    yield put(
+      addMessage({
+        messages: ['Successfully delete user'],
+        type: NotificationType.success,
+      })
+    )
+    yield put(
+      fetchUsers({
+        page: 1,
+        pageSize: 10,
+      })
+    )
+  } catch (e) {
+    yield put(
+      addMessage({
+        messages: getErrorMessage(e.response.data.message),
+        type: NotificationType.error,
+      })
+    )
   }
 }
 
-function* workerAddUser(action: PayloadActionAddUser) {
+function* workerAddUser(action: PayloadAction<AddUser>) {
   try {
     yield postUser(action)
-    yield put(addUserSuccess())
+    yield put(
+      addMessage({
+        messages: ['Successfully added new user'],
+        type: NotificationType.success,
+      })
+    )
     yield action.payload.onSuccess()
-  } catch {
-    yield put(addUserFail())
+  } catch (e) {
+    yield put(
+      addMessage({
+        messages: getErrorMessage(e.response.data.message),
+        type: NotificationType.error,
+      })
+    )
+    if (action.payload.onFail) yield action.payload.onFail()
   }
 }
 
-function* workerEditUser(action: PayloadActionEditUser) {
+function* workerEditUser(action: PayloadAction<EditUser>) {
   try {
     yield patchUser(action)
-    yield put(editUserSuccess())
+    yield put(
+      addMessage({
+        messages: ['Successfully updated user'],
+        type: NotificationType.success,
+      })
+    )
     yield action.payload.onSuccess()
-  } catch {
-    yield put(editUserFail())
-  }
-}
-
-function* workerFetchLocation() {
-  try {
-    const { data } = yield getLocation()
-    yield put(fetchLocationSuccess(data))
-  } catch {
-    yield put(fetchLocationFail())
+  } catch (e) {
+    yield put(
+      addMessage({
+        messages: getErrorMessage(e.response.data.message),
+        type: NotificationType.error,
+      })
+    )
+    if (action.payload.onFail) yield action.payload.onFail()
   }
 }
 
@@ -86,5 +109,4 @@ export function* userSaga() {
   yield takeLatest(removeUser, workerRemoveUser)
   yield takeLatest(addUser, workerAddUser)
   yield takeLatest(editUser, workerEditUser)
-  yield takeLatest(fetchLocation, workerFetchLocation)
 }

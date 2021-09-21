@@ -47,7 +47,6 @@ export const HardwareTable = () => {
   return (
     <MaterialTable
       data={tableData}
-      columns={columns}
       {...getPaginationTableFields(devices, fetchDevices, columns, deleteDevice, actions)}
     />
   )

@@ -74,30 +74,31 @@ export const HardwareFormContainer = (): JSX.Element => {
 
   return (
     <>
-      <Loader isLoading={(id ? device.isLoading : false) || devicesBrands.isLoading} objects={devicesBrands.data}>
-        <Box maxWidth={800} mx="auto">
-          <Box my={2} display="flex" justifyContent="space-between">
-            <Button startIcon={<ArrowBack />} onClick={handleGoBackButtonClick}>
-              Go back
+      <Box maxWidth={800} mx="auto">
+        <Box my={2} display="flex" justifyContent="space-between">
+          <Button startIcon={<ArrowBack />} onClick={handleGoBackButtonClick}>
+            Go back
+          </Button>
+          <Box>
+            <Button color="primary" startIcon={<DevicesIcon />} onClick={() => setIsBrandsActive(true)}>
+              Manage brands
             </Button>
-            <Box>
-              <Button color="primary" startIcon={<DevicesIcon />} onClick={() => setIsBrandsActive(true)}>
-                Manage brands
-              </Button>
-              <Button color="primary" startIcon={<LocationOnIcon />} onClick={() => setIsLocationsActive(true)}>
-                Manage locations
-              </Button>
-            </Box>
+            <Button color="primary" startIcon={<LocationOnIcon />} onClick={() => setIsLocationsActive(true)}>
+              Manage locations
+            </Button>
           </Box>
+        </Box>
 
-          <Typography variant="h2" color="primary">
-            {id ? 'Edit' : 'Add new'} device:
-          </Typography>
+        <Typography variant="h2" color="primary">
+          {id ? 'Edit' : 'Add new'} device:
+        </Typography>
+        <Loader isLoading={!!id && (device.isLoading || devicesBrands.isLoading)} objects={devicesBrands.data}>
           <Box mt={2}>
             <HardwareForm />
           </Box>
-        </Box>
-      </Loader>
+        </Loader>
+      </Box>
+
       <DrawerWrapper
         classes={{ paper: drawer }}
         anchor="right"

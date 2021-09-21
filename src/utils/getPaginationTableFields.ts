@@ -1,16 +1,17 @@
 import { ActionCreatorWithPayload } from '@reduxjs/toolkit'
 import { Action, Column } from '@material-table/core'
-import { GenericFeatureStateTypeWithMultipleElements, TablePaginationPropsTypes } from './types/types'
 import { tableIcons } from './tableIcons'
+import { FeatureType, GenericFeatureStateTypeWithMultipleElements, TablePaginationPropsTypes } from './types/types'
 
 export const getPaginationTableFields = <T extends { id: number }>(
-  data: GenericFeatureStateTypeWithMultipleElements<T>,
+  data: GenericFeatureStateTypeWithMultipleElements<FeatureType>,
   fetchingAction: ActionCreatorWithPayload<TablePaginationPropsTypes, string>,
   columns: Column<T>[],
   deleteAction: ActionCreatorWithPayload<number, string>,
   actions: ((rowData: T) => Action<T>)[]
 ) => {
   return {
+    columns,
     isLoading: data.isLoading,
     totalCount: data.meta?.totalItems,
     page: data.meta?.currentPage ? data.meta?.currentPage - 1 : 0,
