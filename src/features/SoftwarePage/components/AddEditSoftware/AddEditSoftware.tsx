@@ -67,7 +67,6 @@ export const AddEditSoftware = () => {
         ...values,
       })
     }
-    push(`${toSoftwarePage}${toList}`)
     resetForm()
   }
 

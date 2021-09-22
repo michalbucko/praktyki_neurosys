@@ -34,6 +34,7 @@
      "react/require-default-props": 0,
      "react/no-unused-prop-types": 0,
      "unused-imports/no-unused-imports-ts": "error",
+     "import/no-cycle": 0,
      "@typescript-eslint/explicit-module-boundary-types": 0 // in many cases TS knows return type of the function so don't require to always specify it explicitly
 
    },

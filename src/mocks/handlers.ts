@@ -1,7 +1,8 @@
 import { rest } from 'msw'
 import { format } from 'date-fns'
 import { dateFormat } from 'utils/dateFormat'
-import { OperationBackend, operationHistory } from './data'
+import { OperationBackend, operationHistory } from './history/data'
+import { devices } from './hardware/data'
 
 export type OperationPropsString = keyof Omit<OperationBackend, 'operationDate'>
 
@@ -71,5 +72,8 @@ export const handlers = [
     }
 
     return res(ctx.status(404), ctx.delay(200))
+  }),
+  rest.get('/hardware', (req, res, ctx) => {
+    return res(ctx.status(200), ctx.delay(200), ctx.json(devices))
   }),
 ]

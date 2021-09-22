@@ -4,9 +4,9 @@ import { toUsersPage } from 'routes/routes'
 import { AddCircle } from '@material-ui/icons'
 import { useHistory } from 'react-router'
 import { Users } from 'features/User/components/UserList/Users'
-import Loader from 'features/User/Loader'
 import { useDisptachUsers, useSelectUsers } from 'features/User/usersSlice'
 import { useEffect } from 'react'
+import Loader from 'components/Loader/Loader'
 import { toAddUser } from '../../routes'
 
 export const UsersList = () => {

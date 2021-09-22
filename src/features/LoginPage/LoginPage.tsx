@@ -1,5 +1,5 @@
 import { Container, makeStyles } from '@material-ui/core'
-import { Loader } from 'utils/Loader'
+import Loader from 'components/Loader/Loader'
 import { LoginForm } from './components/LoginForm'
 import { useSelectLogin } from './LoginSlice'
 

@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'development' || process.env.REACT_APP_LOGGER === '
 export const store = configureStore({
   reducer: getReducer(),
   middleware: [thunk, sagaMiddleware],
-  enhancers,
+  enhancers: [...enhancers, injectorsEnhancer],
   devTools: process.env.REACT_APP_LOGGER === 'true',
 })
 
