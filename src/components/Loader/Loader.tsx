@@ -5,13 +5,14 @@ import { isEmpty } from 'lodash'
 const useStyles = makeStyles((theme) =>
   createStyles({
     title: {
-      fontSize: theme.typography.h4.fontSize,
+      fontSize: theme.typography.h2.fontSize,
     },
     grid: {
       position: 'relative',
     },
     wrapperLoader: {
       zIndex: 1000,
+      background: theme.palette.background.paper,
       position: 'absolute',
       top: 0,
       left: 0,
@@ -27,11 +28,10 @@ const useStyles = makeStyles((theme) =>
 type Props = {
   isLoading: boolean
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  objects?: any[]
-  emptyLabel?: string
+  objects?: any
 }
 
-export const Loader: FC<Props> = ({ isLoading, objects, emptyLabel, children }) => {
+const Loader: FC<Props> = ({ isLoading, objects, children }) => {
   const { title, grid, wrapperLoader } = useStyles()
 
   const getViewElement = () => {
@@ -55,6 +55,9 @@ export const Loader: FC<Props> = ({ isLoading, objects, emptyLabel, children }) 
       )
     }
     // after fetch, no elements
+    if (objects && isEmpty(objects)) {
+      return <Grid item>No elements</Grid>
+    }
 
     return null
   }
@@ -71,3 +74,5 @@ export const Loader: FC<Props> = ({ isLoading, objects, emptyLabel, children }) 
     </Grid>
   )
 }
+
+export default Loader

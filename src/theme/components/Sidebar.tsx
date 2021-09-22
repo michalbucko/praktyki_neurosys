@@ -1,11 +1,12 @@
 import { Drawer, List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core'
 import { makeStyles } from '@material-ui/styles'
 import { useHistory } from 'react-router-dom'
-import { toDashboard, toHardwarePage, toSoftwarePage, toUsersPage } from 'routes/routes'
+import { toDashboard, toHardwarePage, toSoftwarePage, toUsersPage, toHistoryPage } from 'routes/routes'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 import React, { ReactNode } from 'react'
 import PeopleIcon from '@material-ui/icons/People'
 import ComputerIcon from '@material-ui/icons/Computer'
+import HistoryIcon from '@material-ui/icons/History'
 import { Web } from '@material-ui/icons'
 import { appBarHeight } from './Appbar'
 
@@ -53,6 +54,11 @@ export const Sidebar = () => {
       name: 'Users',
       url: toUsersPage,
       icon: <PeopleIcon />,
+    },
+    {
+      name: 'History',
+      url: toHistoryPage,
+      icon: <HistoryIcon />,
     },
   ]
 

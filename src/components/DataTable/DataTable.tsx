@@ -1,7 +1,7 @@
 import MaterialTable, { Column } from '@material-table/core'
 import axios from 'axios'
 import { Operation } from '../../features/OperationHistoryTable/historySlice'
-import { tableIcons } from '../../features/OperationHistoryTable/tableIcons'
+import { tableIcons } from '../../utils/tableIcons'
 
 type Props = {
   title: string
