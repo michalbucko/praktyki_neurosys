@@ -14,7 +14,7 @@ export type LoginType = {
 
 const initialState: LoginType = {
   isAuth: false,
-  isLoading: true,
+  isLoading: false,
 }
 
 export const loginSlice = createSlice({
@@ -37,7 +37,7 @@ export const loginSlice = createSlice({
       state.isLoading = false
       state.user = payload
     },
-    logFailure: (state, { payload }) => {
+    logFailure: (state) => {
       state.isAuth = false
       state.isLoading = false
       state.user = undefined

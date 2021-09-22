@@ -9,6 +9,12 @@ import Loader from 'components/Loader/Loader'
 export const MainRoutes = () => {
   const { isLoading, user } = useSelectLogin()
   const { logOut } = useDispatchLogin()
+  const { logPending } = useDispatchLogin()
+
+  useEffect(() => {
+    logPending()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     const intervalId = setInterval(() => {
