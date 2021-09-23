@@ -54,10 +54,6 @@ const Loader: FC<Props> = ({ isLoading, objects, children }) => {
         </Grid>
       )
     }
-    // after fetch, no elements
-    if (objects && isEmpty(objects)) {
-      return <Grid item>No elements</Grid>
-    }
 
     return null
   }

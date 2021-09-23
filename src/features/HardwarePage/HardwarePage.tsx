@@ -5,7 +5,7 @@ import { Redirect, Switch, useRouteMatch } from 'react-router-dom'
 import { PrivateRoute } from 'routes/PrivateRoute'
 import { useDispatchNotification } from 'shared/Notification/notificationsSlice'
 import { HardwareFormContainer } from './HardwareFormContainer/HardwareFormContainer'
-import { HardwareListContainer } from './HardwareListContainer/HardwareListContainer'
+import { HardwareListContainer } from './HardwareTableContainer/HardwareTableContainer'
 import { toAddItem, toEditItem, toList } from './routes'
 import { Notification } from '../../shared/Notification/Notification/Notification'
 

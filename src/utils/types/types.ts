@@ -3,6 +3,8 @@ export type Meta = {
   totalItems: number
   currentPage: number
   totalPages: number
+  sortBy: string[]
+  search?: string
 }
 export type GenericFeatureStateTypeWithMultipleElements<T> = {
   data: T[]

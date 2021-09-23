@@ -10,6 +10,8 @@ import { useDispatchLocation, useSelectLocation } from 'shared/location/location
 import LocationOnIcon from '@material-ui/icons/LocationOn'
 import { Column } from '@material-table/core'
 import { Location } from 'shared/location/types'
+import { useDispatchNotification } from 'shared/Notification/notificationsSlice'
+import { NotificationType } from 'shared/Notification/types'
 import { toList } from '../routes'
 import { useDispatchDevices, useSelectHardware } from '../hardwareSlice'
 import { HardwareForm } from './HardwareForm/HardwareForm'
@@ -37,6 +39,7 @@ export const HardwareFormContainer = (): JSX.Element => {
   const { id } = useParams<{ id: string }>()
   const { push } = useHistory()
   const { devicesBrands, device } = useSelectHardware()
+  const { addMessage } = useDispatchNotification()
   const { locations } = useSelectLocation()
   const { drawer } = useStyles()
 
@@ -46,6 +49,17 @@ export const HardwareFormContainer = (): JSX.Element => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
+
+  useEffect(() => {
+    if (!device.isLoading && !device.data) {
+      push(`${toHardwarePage}${toList}`)
+      addMessage({
+        messages: ['Failed to get device data'],
+        type: NotificationType.error,
+      })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [device.isLoading, device.data])
 
   useEffect(() => {
     fetchDevicesBrands()
