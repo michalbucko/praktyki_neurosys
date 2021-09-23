@@ -6,10 +6,16 @@ import { OnRequest } from '../../utils/types/types'
 export type GetDevicesPayloadProp = {
   page: number
   pageSize: number
+  search?: string
+  sortBy?: string
+  sortDirection?: string
 }
 
 export const getDevices = ({ payload }: PayloadAction<GetDevicesPayloadProp>) => {
-  const url = `/devices/?page=${payload.page}&limit=${payload.pageSize}`
+  const searchQuery = payload.search ? `&search=${payload.search}` : ''
+  const sortQuery = payload.sortBy ? `&sortBy=${payload.sortBy}:${payload.sortDirection?.toUpperCase()}` : ''
+
+  const url = `/devices/?page=${payload.page}&limit=${payload.pageSize}${searchQuery}${sortQuery}`
 
   return axios.get(url)
 }

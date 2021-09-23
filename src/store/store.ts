@@ -1,7 +1,7 @@
 import { configureStore, ThunkAction, Action, applyMiddleware } from '@reduxjs/toolkit'
-import { createInjectorsEnhancer } from 'redux-injectors'
-import { createLogger } from 'redux-logger'
 import createSagaMiddleware from 'redux-saga'
+import { createLogger } from 'redux-logger'
+import { createInjectorsEnhancer } from 'redux-injectors'
 import thunk from 'redux-thunk'
 import { getReducer } from './reducers'
 
