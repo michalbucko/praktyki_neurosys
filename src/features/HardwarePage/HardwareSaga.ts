@@ -3,6 +3,7 @@ import { takeLatest, put } from 'redux-saga/effects'
 import { addMessage } from 'shared/Notification/notificationsSlice'
 import { NotificationType } from 'shared/Notification/types'
 import { getErrorMessage } from 'utils/getMessage'
+import { TablePaginationPropsTypes } from 'utils/types/types'
 import {
   DeleteDeviceBrandPayloadProp,
   deleteDeviceBrandRequest,
@@ -10,7 +11,6 @@ import {
   getDevice,
   getDevices,
   getDevicesBrands,
-  GetDevicesPayloadProp,
   PatchDeviceBrandPayloadProp,
   patchDeviceBrandRequest,
   PatchDevicePayloadProps,
@@ -44,7 +44,7 @@ import {
   patchDeviceError,
 } from './hardwareSlice'
 
-function* workerFetchDevices(action: PayloadAction<GetDevicesPayloadProp>) {
+function* workerFetchDevices(action: PayloadAction<TablePaginationPropsTypes>) {
   try {
     const { data } = yield getDevices(action)
     yield put(fetchDevicesSuccess(data))
