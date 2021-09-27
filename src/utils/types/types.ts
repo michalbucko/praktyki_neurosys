@@ -1,3 +1,7 @@
+import { Device } from 'features/HardwarePage/types'
+import { Software } from 'features/SoftwarePage/Software'
+import { User } from 'features/User/types'
+
 export type Meta = {
   itemsPerPage: number
   totalItems: number
@@ -29,3 +33,5 @@ export type TablePaginationPropsTypes = {
   sortBy?: number | string | symbol
   sortDirection?: string
 }
+
+export type FeatureType = Device | User | Software
