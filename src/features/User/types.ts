@@ -1,4 +1,9 @@
-import { PayloadAction } from '@reduxjs/toolkit'
+import { Location } from 'shared/location/types'
+import {
+  GenericFeatureStateTypeWithMultipleElements,
+  GenericFeatureStateTypeWithSingleElement,
+  OnRequest,
+} from 'utils/types/types'
 
 export type User = {
   id: number
@@ -13,11 +18,6 @@ export type User = {
   endDate?: Date | null
 }
 
-export type Location = {
-  id: number
-  name: string
-}
-
 export type UserToEdit = {
   id: number
   email: string
@@ -29,27 +29,9 @@ export type UserToEdit = {
   location: Location
 }
 
-export type LoadingState = {
-  isLoading: boolean
-}
-
-export type UserState = LoadingState & {
-  data: User[]
-}
-
-export type LocationState = LoadingState & {
-  data: Location[]
-}
-
-export type UserToEditState = LoadingState & {
-  data: UserToEdit | null
-}
-
 export type UsersSliceState = {
-  users: UserState
-  location: LocationState
-  userToEdit: UserToEditState
-  message: string
+  users: GenericFeatureStateTypeWithMultipleElements<User>
+  userToEdit: GenericFeatureStateTypeWithSingleElement<UserToEdit>
 }
 
 export type PostUser = {
@@ -75,12 +57,28 @@ export type PatchUser = {
   }
 }
 
-export type PayloadActionEditUser = PayloadAction<{
+export type EditUser = OnRequest & {
   patchUser: PatchUser
-  onSuccess: () => void
-}>
+}
 
-export type PayloadActionAddUser = PayloadAction<{
+export type AddUser = OnRequest & {
   postUser: PostUser
-  onSuccess: () => void
-}>
+}
+
+export type UserTableData = {
+  id: number
+  firstName: string
+  lastName: string
+  position: string
+  beginDate: string
+  endDate?: string
+}
+
+export type GetUsers = {
+  id: number
+  firstName: string
+  lastName: string
+  position: string
+  beginDate: string
+  endDate?: string
+}
