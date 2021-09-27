@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Typography, Button, Box, Theme } from '@material-ui/core'
 import { toHardwarePage } from 'routes/routes'
 import AddCircle from '@material-ui/icons/AddCircle'
 import { useHistory } from 'react-router'
 import { makeStyles } from '@material-ui/styles'
-import Loader from 'components/Loader/Loader'
 import { toAddItem } from '../routes'
 import { HardwareTable } from './HardwareTable/HardwareTable'
-import { useDispatchDevices, useSelectHardware } from '../hardwareSlice'
 
 const useStyles = makeStyles((theme: Theme) => ({
   tableWrapper: {
@@ -21,16 +19,6 @@ const useStyles = makeStyles((theme: Theme) => ({
 export const HardwareListContainer = (): JSX.Element => {
   const { tableWrapper } = useStyles()
   const { push } = useHistory()
-  const { devices } = useSelectHardware()
-  const { fetchDevices } = useDispatchDevices()
-
-  useEffect(() => {
-    fetchDevices({
-      page: devices.meta?.currentPage || 1,
-      pageSize: devices.meta?.itemsPerPage || 20,
-    })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   return (
     <>
@@ -42,11 +30,9 @@ export const HardwareListContainer = (): JSX.Element => {
           Add new device
         </Button>
       </Box>
-      <Loader isLoading={devices.isLoading} objects={devices.data}>
-        <Box className={tableWrapper}>
-          <HardwareTable />
-        </Box>
-      </Loader>
+      <Box className={tableWrapper}>
+        <HardwareTable />
+      </Box>
     </>
   )
 }

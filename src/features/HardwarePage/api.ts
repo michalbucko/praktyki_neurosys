@@ -1,19 +1,11 @@
 import { PayloadAction } from '@reduxjs/toolkit'
 import { axios } from '../../utils/apiClient'
 import { DeviceBrandName, FormValues } from './types'
-import { OnRequest } from '../../utils/types/types'
+import { OnRequest, TablePaginationPropsTypes } from '../../utils/types/types'
 
-export type GetDevicesPayloadProp = {
-  page: number
-  pageSize: number
-  search?: string
-  sortBy?: string
-  sortDirection?: string
-}
-
-export const getDevices = ({ payload }: PayloadAction<GetDevicesPayloadProp>) => {
+export const getDevices = ({ payload }: PayloadAction<TablePaginationPropsTypes>) => {
   const searchQuery = payload.search ? `&search=${payload.search}` : ''
-  const sortQuery = payload.sortBy ? `&sortBy=${payload.sortBy}:${payload.sortDirection?.toUpperCase()}` : ''
+  const sortQuery = payload.sortBy ? `&sortBy=${String(payload.sortBy)}:${payload.sortDirection?.toUpperCase()}` : ''
 
   const url = `/devices/?page=${payload.page}&limit=${payload.pageSize}${searchQuery}${sortQuery}`
 

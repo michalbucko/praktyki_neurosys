@@ -21,3 +21,11 @@ export type OnRequest = {
   onSuccess: () => void
   onFail?: () => void
 }
+
+export type TablePaginationPropsTypes = {
+  page: number
+  pageSize: number
+  search?: string
+  sortBy?: number | string | symbol
+  sortDirection?: string
+}
