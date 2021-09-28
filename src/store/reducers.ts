@@ -6,6 +6,7 @@ import loginState from 'features/LoginPage/LoginSlice'
 import historyState from '../features/OperationHistoryTable/historySlice'
 import locationState from '../shared/location/locationSlice'
 import notificationState from '../shared/Notification/notificationsSlice'
+import dashboardState from '../features/Dashboard/dashboardSlice'
 
 export const getReducer = () =>
   combineReducers({
@@ -16,4 +17,5 @@ export const getReducer = () =>
     loginState,
     locationState,
     notificationState,
+    dashboardState,
   })
