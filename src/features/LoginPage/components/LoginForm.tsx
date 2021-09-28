@@ -32,7 +32,7 @@ export const LoginForm = () => {
       <form onSubmit={handleSubmit}>
         <Box my={1}>
           <Typography variant="h5" color="primary">
-            Sign In
+            Log in
           </Typography>
         </Box>
         <Box display="grid" gridRowGap={16} mt={2}>

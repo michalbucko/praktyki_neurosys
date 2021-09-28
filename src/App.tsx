@@ -10,34 +10,23 @@ import { toLoginPage } from 'routes/routes'
 import { LoginPage } from 'features/LoginPage/LoginPage'
 import { MainRoutes } from 'routes/mainRoutes'
 import { PrivateRouteLogin } from 'routes/PrivateRouteLogin'
-import { useDispatchLogin } from 'features/LoginPage/LoginSlice'
-import { useEffect } from 'react'
+import { Notification } from 'shared/Notification/Notification/Notification'
 
 function App() {
   return (
     <Provider store={store}>
-      <OtherProviders />
+      <ThemeProvider theme={theme}>
+        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+          <BrowserRouter>
+            <Notification />
+            <Switch>
+              <PrivateRouteLogin path={toLoginPage} component={LoginPage} />
+              <MainRoutes />
+            </Switch>
+          </BrowserRouter>
+        </MuiPickersUtilsProvider>
+      </ThemeProvider>
     </Provider>
-  )
-}
-
-const OtherProviders = () => {
-  const { logPending } = useDispatchLogin()
-  useEffect(() => {
-    logPending()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-  return (
-    <ThemeProvider theme={theme}>
-      <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <BrowserRouter>
-          <Switch>
-            <PrivateRouteLogin path={toLoginPage} component={LoginPage} />
-            <MainRoutes />
-          </Switch>
-        </BrowserRouter>
-      </MuiPickersUtilsProvider>
-    </ThemeProvider>
   )
 }
 

@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
 export const LoginPage = () => {
   const { container } = useStyles()
   const { isLoading } = useSelectLogin()
-  // TODO SNACKBAR
   return (
     <Loader isLoading={isLoading}>
       <Container className={container} maxWidth="md">

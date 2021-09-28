@@ -6,7 +6,6 @@ import { StyledContainer } from 'components/StyledContainer/StyledContainer'
 import { HardwareFormContainer } from './HardwareFormContainer/HardwareFormContainer'
 import { HardwareListContainer } from './HardwareTableContainer/HardwareTableContainer'
 import { toAddItem, toEditItem, toList } from './routes'
-import { Notification } from '../../shared/Notification/Notification/Notification'
 
 export const HardwarePage = (): JSX.Element => {
   const { path } = useRouteMatch()
@@ -21,7 +20,6 @@ export const HardwarePage = (): JSX.Element => {
 
   return (
     <StyledContainer>
-      <Notification />
       <Switch>
         <PrivateRoute path={`${path}${toEditItem}/:id`} component={HardwareFormContainer} />
         <PrivateRoute path={`${path}${toList}`} component={HardwareListContainer} />
