@@ -1,3 +1,5 @@
+import { Device } from 'features/HardwarePage/types'
+import { Software } from 'features/SoftwarePage/Software'
 import { Location } from 'shared/location/types'
 import {
   GenericFeatureStateTypeWithMultipleElements,
@@ -27,6 +29,8 @@ export type UserToEdit = {
   beginDate: Date
   endDate: Date | null
   location: Location
+  devices: Device[]
+  softwares: Software[]
 }
 
 export type UsersSliceState = {

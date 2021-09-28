@@ -5,6 +5,7 @@ import { Notification } from 'shared/Notification/Notification/Notification'
 import { toList, toAddUser, toEditItem } from './routes'
 import { UsersTable } from './components/UsersTable/UsersTable'
 import { UserForm } from './components/UserForm/UserForm'
+import { UserDetails } from './components/UserDetails/UserDetails'
 
 export const UserPage = (): JSX.Element => {
   const { path } = useRouteMatch()
@@ -13,6 +14,7 @@ export const UserPage = (): JSX.Element => {
     <StyledContainer>
       <Notification />
       <Switch>
+        <PrivateRoute path={`${path}${toList}/:id`} component={UserDetails} />
         <PrivateRoute path={`${path}${toEditItem}/:id`} component={UserForm} />
         <PrivateRoute path={`${path}${toList}`} component={UsersTable} />
         <PrivateRoute path={`${path}${toAddUser}`} component={UserForm} />

@@ -5,11 +5,12 @@ import { UserTableData } from 'features/User/types'
 import Edit from '@material-ui/icons/Edit'
 import { useHistory } from 'react-router-dom'
 import { toUsersPage } from 'routes/routes'
-import { toAddUser, toEditItem } from 'features/User/routes'
+import { toAddUser, toEditItem, toList } from 'features/User/routes'
 import { Box, Button, makeStyles, Typography } from '@material-ui/core'
 import { AddCircle } from '@material-ui/icons'
 import { useEffect } from 'react'
 import { getPaginationTableFields } from 'utils/getPaginationTableFields'
+import MoreIcon from '@mui/icons-material/More'
 
 const useStyles = makeStyles((theme) => ({
   tableWrapper: {
@@ -53,6 +54,11 @@ export const UsersTable = () => {
       icon: () => <Edit color="primary" />,
       tooltip: 'Edit user',
       onClick: () => push(`${toUsersPage}${toEditItem}/${rowData.id}`),
+    }),
+    (rowData) => ({
+      icon: () => <MoreIcon color="primary" />,
+      tooltip: 'User details',
+      onClick: () => push(`${toUsersPage}${toList}/${rowData.id}`),
     }),
   ]
 
