@@ -1,5 +1,5 @@
 import { Device } from 'features/HardwarePage/types'
-import { Software } from 'features/SoftwarePage/Software'
+import { Software } from 'features/SoftwarePage/types'
 import { Location } from 'shared/location/types'
 import {
   GenericFeatureStateTypeWithMultipleElements,
